@@ -1,5 +1,4 @@
 :root {
-  font-family: 'Noto Sans Variable', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -9,4 +8,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    font-family: 'Noto Sans Variable', system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+}
+
+@font-face {
+    font-family: 'Potra';
+    /*noinspection CssInvalidPropertyValue*/
+    src: local('Potra'),
+    url("./fonts/Potra.ttf") format('truetype'),
 }

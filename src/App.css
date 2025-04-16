@@ -1,7 +1,13 @@
-.css-mg8rse-MuiChip-root {
+* {
     font-family: 'Noto Sans Variable', system-ui, Avenir, Helvetica, Arial, sans-serif !important;
 }
 
+
 #root {
     background: var(--md-sys-color-background) !important;
+}
+
+.rounded-box {
+    border-radius: 24px;
+    padding: 16px
 }
