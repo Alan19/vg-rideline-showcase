@@ -2,6 +2,7 @@ import {gandeeva} from "./gandeeva.tsx";
 import {rorowa} from "./rorowa.tsx";
 import {orfist} from "./orfist.tsx";
 import {Nation} from "./nation.tsx";
+import {eva} from "./eva.tsx";
 
 export type DeckSpotlight = {
     name: string,
@@ -31,5 +32,6 @@ export type DeckSpotlight = {
 export const decks: Record<string, DeckSpotlight> = {
     "rorowa": rorowa,
     "orfist": orfist,
-    "gandeeva": gandeeva
+    "gandeeva": gandeeva,
+    "eva": eva
 }

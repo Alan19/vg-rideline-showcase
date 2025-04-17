@@ -1,10 +1,10 @@
 export enum Nation {
-    dragonEmpire = "dragonEmpire",
-    keterSanctuary = "keterSanctuary",
-    darkStates = "darkStates",
-    stoicheia = "stoicheia",
-    brandtGate = "brandtGate",
-    lyricalMonasterio = "lyricalMonasterio",
-    nationless = "nationless",
-    collaboration = "collaboration"
+    dragonEmpire = "Dragon Empire",
+    keterSanctuary = "Keter Sanctuary",
+    darkStates = "Dark States",
+    stoicheia = "Stoicheia",
+    brandtGate = "Brandt Gate",
+    lyricalMonasterio = "Lyrical Monasterio",
+    nationless = "Nationless",
+    collaboration = "Collaboration"
 }

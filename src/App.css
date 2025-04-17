@@ -8,6 +8,6 @@
 }
 
 .rounded-box {
-    border-radius: 24px;
+    border-radius: 2rem 0 2rem 0;
     padding: 16px
 }

@@ -9,7 +9,8 @@ import {Nation} from "./decks/nation.tsx";
 
 export function DeckShowcase({setSelectedTheme}: { setSelectedTheme: React.Dispatch<React.SetStateAction<Nation>> }) {
     const {deck} = useParams();
-    const {advantages, gameplan, generics, keyCards, name, rideLine, triggerNotes, triggers, vgParadoxLink, artwork, nation}: DeckSpotlight = decks[deck ?? "rorowa"];
+    const {advantages, gameplan, generics, keyCards, name, rideLine, triggerNotes, triggers, vgParadoxLink, artwork, nation, cost, viability}: DeckSpotlight = decks[deck ?? "rorowa"];
+    console.log(viability)
     setSelectedTheme(nation);
     return (
         <Grid container spacing={3} style={{minHeight: "100vh", overflowY: "clip", marginRight: 24}}>
@@ -73,15 +74,15 @@ export function DeckShowcase({setSelectedTheme}: { setSelectedTheme: React.Dispa
                                 </TableHead>
                                 <TableRow>
                                     <TableCell>Core</TableCell>
-                                    <TableCell>💲💲💲</TableCell>
+                                    <TableCell>{"💲".repeat(cost.core)}</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>Generics</TableCell>
-                                    <TableCell>💲</TableCell>
+                                    <TableCell>{"💲".repeat(cost.generics)}</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>Triggers and PGs</TableCell>
-                                    <TableCell>💲</TableCell>
+                                    <TableCell>{"💲".repeat(cost.triggers)}</TableCell>
                                 </TableRow>
                             </Table>
                         </TableContainer>
@@ -97,19 +98,19 @@ export function DeckShowcase({setSelectedTheme}: { setSelectedTheme: React.Dispa
                                 </TableHead>
                                 <TableRow>
                                     <TableCell>Overall</TableCell>
-                                    <TableCell>✨✨✨</TableCell>
+                                    <TableCell>{"✨".repeat(viability.overall)}</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>Offense</TableCell>
-                                    <TableCell>✨✨✨</TableCell>
+                                    <TableCell>{"✨".repeat(viability.offense)}</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>Control</TableCell>
-                                    <TableCell>✨✨</TableCell>
+                                    <TableCell>{"✨".repeat(viability.control)}</TableCell>
                                 </TableRow>
                                 <TableRow>
                                     <TableCell>Value</TableCell>
-                                    <TableCell>✨✨✨✨</TableCell>
+                                    <TableCell>{"✨".repeat(viability.value)}</TableCell>
                                 </TableRow>
                             </Table>
                         </TableContainer>

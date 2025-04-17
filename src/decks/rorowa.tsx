@@ -48,14 +48,14 @@ export const rorowa: DeckSpotlight = {
     ],
     artwork: "https://story.cf-vanguard.com/wordpress/wp-content/uploads/2024/11/05205100/rorowa-768x998.png",
     cost: {
-        core: 0,
-        generics: 0,
-        triggers: 0
+        core: 1,
+        generics: 3,
+        triggers: 1
     },
     viability: {
-        overall: 0,
-        offense: 0,
-        control: 0,
-        value: 0
+        overall: 2,
+        offense: 3,
+        control: 2,
+        value: 2
     }
 };

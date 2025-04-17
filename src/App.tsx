@@ -1,7 +1,7 @@
 import './App.css'
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import {CssVarsProvider, Theme} from "@mui/material-next";
-import {brandt, stoicheia} from "./nation-themes.ts";
+import {brandt, dragonEmpire, stoicheia} from "./nation-themes.ts";
 import {AppRouter} from "./AppRouter.tsx";
 import {useState} from "react";
 
@@ -18,6 +18,9 @@ function App() {
     switch (selectedTheme) {
         case Nation.stoicheia:
             m3Theme = stoicheia;
+            break;
+        case Nation.dragonEmpire:
+            m3Theme = dragonEmpire;
             break;
         default:
             m3Theme = brandt;
