@@ -1,0 +1,23 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import ModeToggle from './ModeToggle.astro';
+---
+
+<nav class="m l left">
+    <header>
+
+    </header>
+    <HeaderLink href="/">
+        <i>home</i>
+        <span>Home</span>
+    </HeaderLink>
+    <HeaderLink href="/decks">
+        <i>playing_cards</i>
+        <span>Decks</span>
+    </HeaderLink>
+    <HeaderLink href="/about">
+        <i >info</i>
+        <span>About</span>
+    </HeaderLink>
+    <ModeToggle />
+</nav>

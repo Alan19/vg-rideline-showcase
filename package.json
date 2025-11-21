@@ -1,50 +1,31 @@
 {
-  "name": "vg-rideline-showcase",
-  "private": true,
-  "version": "0.0.1",
-  "homepage": "https://alan19.github.io/vg-rideline-showcase/",
+  "name": "vg-rideline-infographics",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@fontsource-variable/noto-sans": "^5.2.6",
-    "@fontsource-variable/roboto": "^5.2.5",
-    "@fontsource/roboto": "^5.2.5",
-    "@mui/icons-material": "^7.0.2",
-    "@mui/material": "^7.0.2",
-    "@mui/material-next": "6.0.0-alpha.126",
-    "lodash": "^4.17.21",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router": "^7.5.0"
+    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^5.16.2",
+    "beercss": "^3.12.13",
+    "material-dynamic-colors": "^1.1.2",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sharp": "^0.34.3",
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@mui/types": "^7.4.1",
-    "@types/lodash": "^4.17.16",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "gh-pages": "^6.3.0",
-    "globals": "^15.15.0",
-    "typescript": "~5.7.2",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.3.0"
-  },
-  "overrides": {
-    "@types/react": "$@types/react",
-    "react": "$react",
-    "react-dom": "$react-dom"
+    "@types/papaparse": "^5.5.2",
+    "papaparse": "^5.5.3",
+    "axios": "^1.13.2"
   }
 }
