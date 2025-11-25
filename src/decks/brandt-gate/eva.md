@@ -35,12 +35,14 @@ offense: 2
 control: 2
 value: 4
 advantages: [
-    Early Game Presence,
-    High Powered Attacks,
+    Board Presence,
     Rear-guards with Critical,
-    Flexible Guarding,
-    Consistent,
-    High Trigger Rates
+    Deck Filtering
+]
+disadvantages: [
+    Low Offensive Ceiling,
+    Vulnerable Hand Size Early Game,
+    Research orders can clog hand
 ]
 related: [
     Arkhite,

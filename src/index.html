@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{title}}</title>
+    <title>{{ title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet"/>
     <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
     <link href="/index.css" rel="stylesheet" type="text/css"/>
     <script type="module">
         import {setTheme} from "/bundle.js";
+
         setTheme("#039fec");
     </script>
 </head>
@@ -18,21 +19,26 @@
         <div>
             <h1>Dragon Empire</h1>
             {% for post in collections.dragon-empire %}
-            <a href="{{post.url}}">
-                <img style="height: 300px" src="/assets/{{post.data.card-art}}" class="two-rounded-corners"/>
-            </a>
+                <a href="{{ post.url }}">
+                    <img style="height: 300px" src="/assets/{{ post.data.card-art }}" class="two-rounded-corners"/>
+                </a>
             {% endfor %}
 
         </div>
         <h1>Keter Sanctuary</h1>
         <h1>Dark States</h1>
         <h1>Stoicheia</h1>
+        {% for post in collections.stoicheia %}
+            <a href="{{ post.url }}">
+                <img style="height: 300px" src="/assets/{{ post.data.card-art }}" class="two-rounded-corners"/>
+            </a>
+        {% endfor %}
         <div>
             <h1>Brandt Gate</h1>
             {% for post in collections.brandt %}
-            <a href="{{post.url}}">
-                <img style="height: 300px" src="/assets/{{post.data.card-art}}" class="two-rounded-corners"/>
-            </a>
+                <a href="{{ post.url }}">
+                    <img style="height: 300px" src="/assets/{{ post.data.card-art }}" class="two-rounded-corners"/>
+                </a>
             {% endfor %}
         </div>
 
