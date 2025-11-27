@@ -49,6 +49,17 @@ triggers-cost: 1
 offense: 3
 control: 2
 value: 1
-
+related: [
+  Kheios,
+  Thegrea,
+  Tamayura,
+  Michu,
+  Eva
+]
+deck-notes: [
+    "OT Choice: Blessfavor or Valnout",
+    'Prefers Shield Draw Triggers ("Serene Maiden, Lena")',
+    'Prefers "Fire Regalis" as Regalis Piece'
+]
 ---
 Generate "Plant" tokens in the early game, then attack 4 times using the skills of "Dragritter Girl of Flame Blossoms, Radylina", and your "Momokke" token. Once your vanguard is grade 3 or greater, use "Crossing Interdimensional Thoughts, Rorowa"'s ability to create "Plant" tokens, search for units from your deck or send your opponent's rear-guards to the bottom of the deck, while playing "Resolute Pair of Eyes" to power up your token units. You can also evolve your "Momokke" token into "Shell-breaking Wings, Momokke" to retire your opponent's rear-guards, and attack 5 times with the ability of "Undoubting Flame Sword, Radylina"!

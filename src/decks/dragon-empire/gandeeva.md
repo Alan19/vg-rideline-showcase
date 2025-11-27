@@ -33,6 +33,13 @@ advantages: [
   "Vanguard with Critical",
   "5 Attacks"
 ]
+disadvantages:
+  - Multi-attacks need specific rear-guards
+  - Masque engine takes up deck slots
+  - Multi-attacks need to be replenished
+deck-notes:
+  - Prefers shield draws ("Flare Veil Dragon")
+  - 'Regalis Piece Choices: "Protection: Twincast" or "Fire Regalis"'
 core-cost: 1
 generics-cost: 2
 triggers-cost: 1

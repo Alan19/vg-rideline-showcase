@@ -53,5 +53,10 @@ related: [
     Tamayura,
     Michu
 ]
+deck-notes:
+  - Needs specific PG ("Craggy Monster, Girgrand")
+  - "OT Choices: Eldobreath or Valnout"
+  - Does not want Elementaria Sanctitude
+  - Wants "Fire Regalis" as Regalis Piece
 ---
 Filter your deck using the skills of Eva and your Research cards, and apply pressure by superior calling "Knight of Blackness, Obscudeid"! By sending non-trigger cards from your deck to your hand or drop at a rapid pace, you increase the probability of drawing and checking triggers, improving your hand's shield values and increasing your late game offensive pressure! Use "Imprisoning Past" and "Examination Monster, Imigrar" to take advantage of unlimited Persona Rides!

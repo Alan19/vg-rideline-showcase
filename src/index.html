@@ -26,6 +26,11 @@
 
         </div>
         <h1>Keter Sanctuary</h1>
+        {% for post in collections.keter-sanctuary %}
+            <a href="{{ post.url }}">
+                <img style="height: 300px" src="/assets/{{ post.data.card-art }}" class="two-rounded-corners"/>
+            </a>
+        {% endfor %}
         <h1>Dark States</h1>
         <h1>Stoicheia</h1>
         {% for post in collections.stoicheia %}

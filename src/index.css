@@ -12,3 +12,7 @@
 .two-rounded-corners {
     border-radius: 2rem 0 2rem 0 !important;
 }
+
+.tinier-space {
+    gap: 8px
+}
