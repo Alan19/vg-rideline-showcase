@@ -1,7 +1,7 @@
 ---
 title: "Luard"
-card-art: ../../assets/Luard.png
-nation: keter-sanctuary
+card-art: ../../../assets/Luard.png
+nation: Keter Sanctuary
 tags: [keter-sanctuary]
 rideline: [
     "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss10/dss10_004.png",

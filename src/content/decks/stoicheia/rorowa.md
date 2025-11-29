@@ -1,7 +1,7 @@
 ---
 title: "Rorowa"
-card-art: ../../assets/Rorowa.png
-nation: stoicheia
+card-art: '../../../assets/Rorowa.png'
+nation: Stoicheia
 tags: [stoicheia]
 rideline: [
     "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt05/dbt05_090.png",

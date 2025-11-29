@@ -1,8 +1,8 @@
 ---
 title: Eva
 tags: [brandt]
-nation: brandt-gate
-card-art: Eva.png
+nation: Brandt Gate
+card-art: '../../../assets/Eva.png'
 rideline: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt05/dbt05_072.png",
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt05/dbt05_070.png",

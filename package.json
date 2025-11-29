@@ -1,24 +1,20 @@
 {
-  "name": "vg-standard-decks",
-  "module": "src/index.html",
+  "name": "",
   "type": "module",
-  "private": true,
+  "version": "0.0.1",
   "scripts": {
-    "build": "eleventy",
-    "watch": "eleventy --watch",
-    "dev": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
-  },
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2",
+    "@astrojs/mdx": "^4.3.12",
+    "@astrojs/rss": "^4.0.14",
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.16.2",
     "beercss": "^3.12.13",
     "material-dynamic-colors": "^1.1.2",
-    "tsx": "^4.20.6"
+    "sharp": "^0.34.3"
   }
 }

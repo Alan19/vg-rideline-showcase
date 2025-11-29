@@ -1,7 +1,7 @@
 ---
 title: "Gandeeva"
-card-art: ../../assets/Gandeeva.png
-nation: dragon-empire
+card-art: '../../../assets/Gandeeva.png'
+nation: Dragon Empire
 tags: [dragon-empire]
 rideline: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt10/dbt10_064.png",
