@@ -1,0 +1,20 @@
+---
+import type {ImageMetadata} from "astro";
+interface Props {
+    id: string;
+    art: ImageMetadata;
+    title: string;
+}
+
+import {Image} from "astro:assets";
+const {art, id, title} = Astro.props
+---
+<script>
+    import "beercss";
+    import "material-dynamic-colors";
+</script>
+<link href="/showcase.css" rel="stylesheet" type="text/css"/>
+<a href={`/decks/${id}/`} style="display: contents">
+    <Image src={art} alt={title} class="two-rounded-corners" style="object-fit: cover; object-position: top; width: 100%; height: 20rem"/>
+    <!--<h4 class="title no-margin">{title}</h4>-->
+</a>

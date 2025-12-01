@@ -16,16 +16,10 @@ key-cards: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt06/dzbt06_034.png",
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss08/dss08_021.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt09/dzbt09_009.png",
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_095.png",
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt06/dzbt06_020.png",
-  "https://cf-vanguard.com/wordpress/wp-content/images/cardlist/DZ-BT07/dzbt07_286.png"
-]
-triggers: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss05/dss05_044.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt03/dzbt03_052.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_025.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dztd01-06/dztd03_013.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_008.png"
 ]
 core-cost: 3
 generics-cost: 1
