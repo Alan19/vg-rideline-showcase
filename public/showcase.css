@@ -14,5 +14,5 @@
 }
 
 .tinier-space {
-    gap: 8px
+    gap: 4px !important;
 }

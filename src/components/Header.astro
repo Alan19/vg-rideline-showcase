@@ -3,11 +3,14 @@ import {SITE_TITLE} from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
-<header>
+<header class="elevation">
     <nav>
-        <button class="circle transparent">
-            <i>arrow_back</i>
-        </button>
+        <!--TODO Hide element at the top route-->
+        <a href="/decks">
+            <button class="circle transparent">
+                <i>arrow_back</i>
+            </button>
+        </a>
         <h6 class="max"><a href="/">{SITE_TITLE}</a></h6>
         <div class="internal-links">
             <HeaderLink href="/">Home</HeaderLink>

@@ -18,18 +18,23 @@ const posts = (await getCollection('decks'))
     <script>
         import "beercss";
         import "material-dynamic-colors";
+
         ui("theme", "#039fec");
     </script>
 </head>
 <body>
 <Header/>
 <main class="responsive">
-    {["Dragon Empire", "Keter Sanctuary", "Dark States", "Stoicheia", "Brandt Gate", "Lyrical Monasterio"].map(nation => <section>
-        <h4>{nation}</h4>
-        <div class="grid">
-            {posts.filter(post => post.data.nation === nation).map(post => <div class="s4 m2"><DeckLink title={post.data.title} art={post.data['card-art']} id={post.id} /></div>)}
-        </div>
-    </section>)}
+    {["Dragon Empire", "Keter Sanctuary", "Dark States", "Stoicheia", "Brandt Gate", "Lyrical Monasterio"].map(nation =>
+            <section>
+                <h4>{nation}</h4>
+                <div class="grid">
+                    {posts.filter(post => post.data.nation === nation).map(post =>
+                            <div class="s4 m2">
+                                <DeckLink title={post.data.title} art={post.data['card-art']} id={post.id}/>
+                            </div>)}
+                </div>
+            </section>)}
 
 </main>
 <Footer/>

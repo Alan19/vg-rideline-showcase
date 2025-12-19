@@ -4,6 +4,9 @@ import dragonEmpire from "../assets/flags/Dragon Empire.png"
 import keterSanctuary from "../assets/flags/Keter Sanctuary.png"
 import brandtGate from "../assets/flags/Brandt Gate.png"
 import stoicheia from "../assets/flags/Stoicheia.png"
+import darkStates from "../assets/flags/Dark States.png"
+import lyricalMonasterio from "../assets/flags/Lyrical Monasterio.png"
+import Header from "../components/Header.astro";
 type Props = CollectionEntry<'decks'>['data'];
 const props = Astro.props;
 const nation = props.nation;
@@ -17,6 +20,10 @@ function getFlag() {
             return dragonEmpire;
         case "Brandt Gate":
             return brandtGate;
+        case "Dark States":
+            return darkStates;
+        case "Lyrical Monasterio":
+            return lyricalMonasterio;
     }
 }
 ---
@@ -43,7 +50,7 @@ function getFlag() {
             ui("theme", "#c50017")
             break;
         case "Dark States":
-            ui("theme", "#062c88")
+            ui("theme", "#7d1485")
             break;
         case "Stoicheia":
             ui("theme", "#007c36");
@@ -60,6 +67,7 @@ function getFlag() {
     }
 </script>
 
+<Header/>
 <div class="grid small-padding center tiny-space" style="max-width: 1200px">
     <div class="s3 l2">
         <img class="card-art two-rounded-corners" src={props['card-art'].src}/>
@@ -77,14 +85,14 @@ function getFlag() {
             <b>Advantages</b>
             <div style="width: 100%; line-height: 2.5">
                 {props.advantages.map(value =>
-                        <button class="chip no-margin">{value}</button>)}
+                        <button class="chip no-margin" style="margin-right: 3px !important;">{value}</button>)}
             </div>
         </div>
         <div class="top-padding">
             <b>Disadvantages</b>
             <div style="width: 100%; line-height: 2.5">
                 {props.disadvantages.map(value =>
-                        <button class="chip no-margin">{value}</button>)}
+                        <button class="chip no-margin" style="margin-right: 3px !important;">{value}</button>)}
             </div>
         </div>
     </article>
@@ -149,8 +157,7 @@ function getFlag() {
             <div>
                 <b>Ride Line</b>
                 <div class="grid tinier-space">
-                    {props.rideline.map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card}
-                                                     alt="">)}
+                    {props.rideline.map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card} alt="">)}
                 </div>
             </div>
         </article>
@@ -158,8 +165,7 @@ function getFlag() {
             <div>
                 <b>Key Cards</b>
                 <div class="grid tinier-space">
-                    {props['key-cards'].map(card => <img class="s3 vg-card"
-                                                         src={typeof card === "object" ? card.src : card} alt=""/>)}
+                    {props['key-cards'].map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card} alt=""/>)}
                 </div>
             </div>
         </article>
