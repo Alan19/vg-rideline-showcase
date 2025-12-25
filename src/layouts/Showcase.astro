@@ -1,5 +1,5 @@
 ---
-import type {CollectionEntry} from "astro:content";
+import {type CollectionEntry, getCollection} from "astro:content";
 import dragonEmpire from "../assets/flags/Dragon Empire.png"
 import keterSanctuary from "../assets/flags/Keter Sanctuary.png"
 import brandtGate from "../assets/flags/Brandt Gate.png"
@@ -40,6 +40,8 @@ function getFlag() {
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
 </head>
 <body>
+<Header/>
+
 <script type="module" define:vars={{nation}}>
     // For some reason a direct import would not work here, so we're importing in head
     switch (nation) {
@@ -66,117 +68,119 @@ function getFlag() {
             break;
     }
 </script>
-
-<Header/>
-<div class="grid small-padding center tiny-space" style="max-width: 1200px">
-    <div class="s3 l2">
-        <img class="card-art two-rounded-corners" src={props['card-art'].src}/>
-    </div>
-    <article class="s9 l7">
-        <div style="display: flex; align-items: center; justify-content: space-between">
-            <h2 class="primary-text">{props.title}</h2>
-            <button class="chip fill round large">
-                <span>{props.nation}</span>
-                <img class="responsive background" src={getFlag().src}>
-            </button>
-        </div>
-        <slot/>
-        <div>
-            <b>Advantages</b>
-            <div style="width: 100%; line-height: 2.5">
-                {props.advantages.map(value =>
-                        <button class="chip no-margin" style="margin-right: 3px !important;">{value}</button>)}
+<main class="responsive">
+    <div class="small-padding center tiny-space" style="display: flex;gap: 1rem">
+        <div class="grid" style="flex: 10;">
+            <div class="s3 l2">
+                <img class="card-art two-rounded-corners" src={props['card-art'].src}/>
             </div>
-        </div>
-        <div class="top-padding">
-            <b>Disadvantages</b>
-            <div style="width: 100%; line-height: 2.5">
-                {props.disadvantages.map(value =>
-                        <button class="chip no-margin" style="margin-right: 3px !important;">{value}</button>)}
-            </div>
-        </div>
-    </article>
-    <article class="s12 m4 l3" style="display: flex;flex-direction: column; gap: 1rem">
-        <div>
-            <h3>Other Info</h3>
-            <table class="no-space">
-                <thead>
-                <tr>
-                    <th>Price Category</th>
-                    <th>Rating</th>
-                </tr>
-                </thead>
-                <tr>
-                    <td>Core</td>
-                    <td>{props['core-cost']}</td>
-                </tr>
-                <tr>
-                    <td>Generics</td>
-                    <td>{props['generics-cost']}</td>
-                </tr>
-                <thead>
-                <tr>
-                    <th>Viability Category</th>
-                    <th>Rating</th>
-                </tr>
-                <tr>
-                    <td>Offense</td>
-                    <td>{props.offense}</td>
-                </tr>
-
-                <tr>
-                    <td>Control</td>
-                    <td>{props.control}</td>
-                </tr>
-
-                <tr>
-                    <td>Value</td>
-                    <td>{props.value}</td>
-                </tr>
-                </thead>
-            </table>
-        </div>
-        <hr/>
-        <div>
-            <h6>Deck Building Notes</h6>
-            <ul style="padding-left: 1rem;margin-top: 0">
-                {props['deck-notes'].map(note =>
-                        <li>{note}</li>)}
-            </ul>
-        </div>
-        <hr/>
-        <div>
-            <h6>Handy Links</h6>
-            <a href={`https://vg-paradox.com/subpage/DeckInfo/ENG/D/${props.title}Tops`} class="underline">{props.title}
-                on
-                VGParadox</a>
-        </div>
-    </article>
-    <div class="grid m8 s12 l12">
-        <article class="primary-container s12 l4">
-            <div>
-                <b>Ride Line</b>
-                <div class="grid tinier-space">
-                    {props.rideline.map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card} alt="">)}
+            <article class="s9 l7">
+                <div style="display: flex; align-items: center; justify-content: space-between">
+                    <h2 class="primary-text">{props.title}</h2>
+                    <button class="chip fill round large">
+                        <span>{props.nation}</span>
+                        <img class="responsive background" src={getFlag().src}>
+                    </button>
                 </div>
-            </div>
-        </article>
-        <article class="secondary-container s12 l4">
-            <div>
-                <b>Key Cards</b>
-                <div class="grid tinier-space">
-                    {props['key-cards'].map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card} alt=""/>)}
+                <slot/>
+                <div>
+                    <b>Advantages</b>
+                    <div style="width: 100%; line-height: 2.5">
+                        {props.advantages.map(value =>
+                                <button class="chip no-margin" style="margin-right: 3px !important;">{value}</button>)}
+                    </div>
                 </div>
+                <div class="top-padding">
+                    <b>Disadvantages</b>
+                    <div style="width: 100%; line-height: 2.5">
+                        {props.disadvantages.map(value =>
+                                <button class="chip no-margin" style="margin-right: 3px !important;">{value}</button>)}
+                    </div>
+                </div>
+            </article>
+            <article class="s12 m4 l3" style="display: flex;flex-direction: column; gap: 1rem">
+                <div>
+                    <h3>Other Info</h3>
+                    <table class="no-space">
+                        <thead>
+                        <tr>
+                            <th>Price Category</th>
+                            <th>Rating</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>Core</td>
+                            <td>{props['core-cost']}</td>
+                        </tr>
+                        <tr>
+                            <td>Generics</td>
+                            <td>{props['generics-cost']}</td>
+                        </tr>
+                        <thead>
+                        <tr>
+                            <th>Viability Category</th>
+                            <th>Rating</th>
+                        </tr>
+                        <tr>
+                            <td>Offense</td>
+                            <td>{props.offense}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Control</td>
+                            <td>{props.control}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Value</td>
+                            <td>{props.value}</td>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <hr/>
+                <div>
+                    <h6>Deck Building Notes</h6>
+                    <ul style="padding-left: 1rem;margin-top: 0">
+                        {props['deck-notes'].map(note =>
+                                <li>{note}</li>)}
+                    </ul>
+                </div>
+                <hr/>
+                <div>
+                    <h6>Handy Links</h6>
+                    <a href={`https://vg-paradox.com/subpage/DeckInfo/ENG/D/${props.title}Tops`} class="underline">{props.title}
+                        on
+                        VGParadox</a>
+                </div>
+            </article>
+            <div class="grid m8 s12 l12">
+                <article class="primary-container s12 l4">
+                    <div>
+                        <b>Ride Line</b>
+                        <div class="grid tinier-space">
+                            {props.rideline.map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card} alt="">)}
+                        </div>
+                    </div>
+                </article>
+                <article class="secondary-container s12 l4">
+                    <div>
+                        <b>Key Cards</b>
+                        <div class="grid tinier-space">
+                            {props['key-cards'].map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card} alt=""/>)}
+                        </div>
+                    </div>
+                </article>
+                <article class="tertiary-container s12 l4">
+                    <b>Generic Cards</b>
+                    <div class="grid tinier-space">
+                        {props.generics.map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card}
+                                                         alt="">)}
+                    </div>
+                </article>
             </div>
-        </article>
-        <article class="tertiary-container s12 l4">
-            <b>Generic Cards</b>
-            <div class="grid tinier-space">
-                {props.generics.map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card}
-                                                 alt="">)}
-            </div>
-        </article>
+        </div>
     </div>
-</div>
+</main>
 </body>
 </html>

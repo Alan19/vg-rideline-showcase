@@ -6,7 +6,7 @@ interface Props {
     title: string;
 }
 
-import {Image} from "astro:assets";
+import { Picture } from 'astro:assets';
 const {art, id, title} = Astro.props
 ---
 <script>
@@ -15,6 +15,12 @@ const {art, id, title} = Astro.props
 </script>
 <link href="/showcase.css" rel="stylesheet" type="text/css"/>
 <a href={`/decks/${id}/`} style="display: contents">
-    <Image src={art} alt={title} class="two-rounded-corners" style="object-fit: cover; object-position: top; width: 100%; height: 20rem"/>
-    <b>{title}</b>
+    <article class="no-padding border">
+        <Picture formats={['webp', 'avif']} src={art} alt={title} class="responsive medium" style={{objectPosition: "top", objectFit: "cover"}} />
+        <div class="absolute bottom left right padding bottom-shadow white-text">
+            <nav>
+                <h6>{title}</h6>
+            </nav>
+        </div>
+    </article>
 </a>

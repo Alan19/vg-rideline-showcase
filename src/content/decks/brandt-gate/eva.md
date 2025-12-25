@@ -3,6 +3,7 @@ title: Eva
 tags: [brandt]
 nation: Brandt Gate
 card-art: '../../../assets/Eva.png'
+key-card: Poison in Paradise, Eva
 rideline: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt05/dbt05_072.png",
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt05/dbt05_070.png",

@@ -1,0 +1,17 @@
+<script type="module">
+    function nextMode() {
+        alert("Clicked!")
+    }
+</script>
+<div style="display: flex;flex-direction: column">
+
+    <button class="circle transparent" onclick="nextMode()">
+        <i id="mode-element">light_mode</i>
+    </button>
+    <button class="circle transparent" onclick="ui('mode', 'dark')">
+        <i>dark_mode</i>
+    </button>
+    <button class="circle transparent" onclick="ui('mode', 'system')">
+        <i>auto_mode</i>
+    </button>
+</div>

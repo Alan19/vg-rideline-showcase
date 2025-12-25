@@ -2,6 +2,7 @@
 title: Orfist
 nation: Brandt Gate
 card-art: '../../../assets/Orfist.png'
+key-card: Cardinal Mors, Orfist Masques
 rideline: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss08/dss08_004.png",
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss08/dss08_003.png",
