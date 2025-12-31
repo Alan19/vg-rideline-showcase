@@ -30,7 +30,7 @@ const posts = (await getCollection('decks'))
                 <h4>{nation}</h4>
                 <div class="grid">
                     {posts.filter(post => post.data.nation === nation).map(post =>
-                            <div class="s4 m2">
+                            <div class="s3 l2">
                                 <DeckLink title={post.data.title} art={post.data['card-art']} id={post.id}/>
                             </div>)}
                 </div>

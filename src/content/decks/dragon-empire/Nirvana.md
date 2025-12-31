@@ -3,22 +3,22 @@ title: Nirvana
 nation: Dragon Empire
 card-art: '../../../assets/Nirvana.png'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_004.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt06/dbt06_063.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt06/dbt06_062.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt06/dbt06_059.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss12/dss12_003.png"
 ]
 key-cards: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_004.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_047.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_005.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_005.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_003.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_001.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt13/dbt13_001.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt13/dbt13_003.png"
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_003.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_018.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_019.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt03/dzbt03_043.png",
+  "",
+  "",
+  ""
 ]
 advantages:
   - 4 Attacks

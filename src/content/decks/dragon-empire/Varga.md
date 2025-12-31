@@ -3,22 +3,22 @@ title: Varga
 nation: Dragon Empire
 card-art: '../../../assets/Varga.png'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_004.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_083.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_081.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_079.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_001.png"
 ]
 key-cards: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_004.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_047.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_005.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_005.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt05/dzbt05_001.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_003.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_002.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt05/dzbt05_022.png"
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_003.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_018.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_019.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_003.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_001.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss12/dpr_333.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt07/dzbt07_002.png"
 ]
 advantages:
   - 4 Attacks
@@ -35,8 +35,8 @@ deck-notes:
 core-cost: 3
 generics-cost: 2
 offense: 3
-control: 2
-value: 2
+control: 3
+value: 3
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.

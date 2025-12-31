@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "vg-rideline-infographics",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -22,5 +22,10 @@
     "react-dom": "^19.2.3",
     "sharp": "^0.34.3",
     "usehooks-ts": "^3.1.1"
+  },
+  "devDependencies": {
+    "@types/papaparse": "^5.5.2",
+    "papaparse": "^5.5.3",
+    "axios": "^1.13.2"
   }
 }

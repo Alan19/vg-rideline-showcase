@@ -3,22 +3,22 @@ title: Liael=Draconis
 nation: Keter Sanctuary
 card-art: '../../../assets/Liael=Draconis.webp'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_004.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_103.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_099.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_098.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_010.png"
 ]
 key-cards: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_004.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_047.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_005.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_005.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_010.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_011.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt07/dzbt07_045.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt05/dzbt05_011.png"
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_003.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_018.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_019.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dpr_389.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_058.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_004.png",
+  ""
 ]
 advantages:
   - 4 Attacks

@@ -7,6 +7,8 @@ import stoicheia from "../assets/flags/Stoicheia.png"
 import darkStates from "../assets/flags/Dark States.png"
 import lyricalMonasterio from "../assets/flags/Lyrical Monasterio.png"
 import Header from "../components/Header.astro";
+import Picture from "astro/components/Picture.astro";
+import Image from "astro/components/Image.astro";
 type Props = CollectionEntry<'decks'>['data'];
 const props = Astro.props;
 const nation = props.nation;
@@ -159,7 +161,7 @@ function getFlag() {
                     <div>
                         <b>Ride Line</b>
                         <div class="grid tinier-space">
-                            {props.rideline.map(card => <img class="s3 vg-card" src={typeof card === "object" ? card.src : card} alt="">)}
+                            {props.rideline.map((card, index) => <img class="s3 vg-card" src={(typeof card === "object" ? card.src : card) as string} alt={`Grade ${index} rideline card`}  />)}
                         </div>
                     </div>
                 </article>

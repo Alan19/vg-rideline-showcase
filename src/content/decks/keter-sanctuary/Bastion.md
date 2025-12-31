@@ -3,22 +3,22 @@ title: Bastion
 nation: Keter Sanctuary
 card-art: '../../../assets/Bastion.png'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_004.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss01/dss01_039.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss01/dss01_038.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss01/dss01_037.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt12/dbt12_010.png"
 ]
 key-cards: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_004.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_047.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_005.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_005.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss12/dss12_027.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_011.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt12/dbt12_028.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_re43.png"
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_003.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_018.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_019.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt02/dbt02_049.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt06/dzbt06_012.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt03/dbt03_007.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss05/dss05_003.png"
 ]
 advantages:
   - 4 Attacks
