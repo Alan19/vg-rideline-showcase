@@ -3,22 +3,22 @@ title: Dhinbarada
 nation: Dragon Empire
 card-art: '../../../assets/Dhinbarada.png'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_004.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_075.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_069.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_068.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_001.png"
 ]
 key-cards: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_004.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_047.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_005.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_005.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_002.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_021.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_070.png",
+  ""
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_003.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_018.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_019.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_002.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_Re02.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dpr/dpr_904.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_003.png"
 ]
 advantages:
   - 4 Attacks

@@ -3,22 +3,22 @@ title: Magnolia
 nation: Stoicheia
 card-art: '../../../assets/Magnolia.png'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_004.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_106.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_105.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_102.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_013.png"
 ]
 key-cards: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_004.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_047.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_005.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_005.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt10/dzbt10_036.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_059.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_037.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dpr/dpr_998.png"
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_003.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_018.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_019.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_015.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_005.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss09/dzss09_020.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt06/dzbt06_020.png"
 ]
 advantages:
   - 4 Attacks

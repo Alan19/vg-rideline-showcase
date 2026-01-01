@@ -3,12 +3,13 @@ import {getCollection} from 'astro:content';
 import {SITE_DESCRIPTION, SITE_TITLE} from '../../consts';
 import DeckLink from "../../components/DeckLink.astro";
 import Layout from "../../components/Layout.astro";
+import {Nation} from "../../content.config.ts";
 
 const posts = (await getCollection('decks'))
 ---
 <Layout>
     <main class="responsive">
-        {["Dragon Empire", "Keter Sanctuary", "Dark States", "Stoicheia", "Brandt Gate", "Lyrical Monasterio"].map(nation =>
+        {Object.values(Nation).map(nation =>
                 <section>
                     <h4>{nation}</h4>
                     <div class="grid">

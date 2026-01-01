@@ -2,6 +2,15 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import {url} from "zod/v4";
 
+export enum Nation {
+    keter = "Keter Sanctuary",
+    de = "Dragon Empire",
+    stoicheia = "Stoicheia",
+    ds = "Dark States",
+    brandt = "Brandt Gate",
+    lyrical = "Lyrical Monasterio"
+}
+
 const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
 	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
@@ -26,10 +35,10 @@ const decks = defineCollection({
             title: z.string(),
             // Card art image path
             ['card-art']: image(),
-            nation: z.enum(["Keter Sanctuary", "Dragon Empire", "Stoicheia", "Dark States", "Brandt Gate", "Lyrical Monasterio"]),
-            rideline: z.array(z.string().url().or(image())).length(4),
-            ['key-cards']: z.array(z.string().url().or(image())).length(4),
-            generics: z.array(z.string().url().or(image())).length(4),
+            nation: z.nativeEnum(Nation),
+            rideline: z.array(z.string().url().or(image())).max(4),
+            ['key-cards']: z.array(z.string().url().or(image())).max(4),
+            generics: z.array(z.string().url().or(image())).max(4),
             advantages: z.array(z.string()),
             disadvantages: z.array(z.string()),
             ['deck-notes']: z.array(z.string()),
