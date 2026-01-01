@@ -3,22 +3,13 @@ import HeaderLink from './HeaderLink.astro';
 import ModeToggle from './ModeToggle.astro';
 import {REPO_NAME} from "../consts.ts";
 ---
-<!--TODO Add better mobile navigation-->
-<nav class="left">
-    <header>
-
-    </header>
-    <HeaderLink href={`/${REPO_NAME}/`}>
-        <i>home</i>
-        <span>Home</span>
-    </HeaderLink>
-    <HeaderLink href={`/${REPO_NAME}/decks`}>
-        <i>playing_cards</i>
-        <span>Decks</span>
-    </HeaderLink>
-    <!--<HeaderLink href={`/${REPO_NAME}/about`}>-->
-    <!--    <i >info</i>-->
-    <!--    <span>About</span>-->
-    <!--</HeaderLink>-->
-    <!--<ModeToggle />-->
-</nav>
+<header class="primary-container">
+    <nav>
+        <h6 class="max"><a href={`/${REPO_NAME}`}>VG Rideline Infographics</a></h6>
+        <a href={`/${REPO_NAME}/decks`}>
+            <button >
+                <i>playing_cards</i>
+                Decks
+            </button>
+        </a>
+    </nav></header>

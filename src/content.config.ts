@@ -3,10 +3,10 @@ import { glob } from 'astro/loaders';
 import {url} from "zod/v4";
 
 export enum Nation {
-    keter = "Keter Sanctuary",
     de = "Dragon Empire",
-    stoicheia = "Stoicheia",
+    keter = "Keter Sanctuary",
     ds = "Dark States",
+    stoicheia = "Stoicheia",
     brandt = "Brandt Gate",
     lyrical = "Lyrical Monasterio"
 }

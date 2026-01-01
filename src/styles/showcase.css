@@ -5,6 +5,13 @@
     border-radius: 32px;
 }
 
+@media (max-width: 600px) {
+    .card-art {
+        height: 20rem;
+        object-position: top;
+    }
+}
+
 .vg-card {
     width: 100%;
     border-radius: 0;
