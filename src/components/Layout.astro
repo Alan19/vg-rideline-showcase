@@ -1,0 +1,55 @@
+---
+import ClientRouter from 'astro/components/ClientRouter.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Navigation from './Navigation.astro';
+import {SITE_DESCRIPTION, SITE_TITLE} from '../consts';
+const props = Astro.props;
+const nation = props.nation
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+    <meta charset="UTF-8">
+    <title>{props.title}</title>
+    <link href="/showcase.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.css" rel="stylesheet"/>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.12.13/dist/cdn/beer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+    <script type="module" data-astro-rerun define:vars={{nation}}>
+        // For some reason a direct import would not work here, so we're importing in head
+        console.log("Switching to " + nation + " theme")
+        switch (nation) {
+            case "Brandt Gate":
+                ui("theme", "#abb3bf");
+                break;
+            case "Dragon Empire":
+                ui("theme", "#c50017")
+                break;
+            case "Dark States":
+                ui("theme", "#7d1485")
+                break;
+            case "Stoicheia":
+                ui("theme", "#007c36");
+                break;
+            case "Lyrical Monasterio":
+                ui("theme", "#eb6c99");
+                break;
+            case "Keter Sanctuary":
+                ui("theme", "#fcc600");
+                break;
+            default:
+                ui("theme", "#039fec");
+                break;
+        }
+    </script>
+    <ClientRouter />
+</head>
+<body>
+<Navigation/>
+<slot/>
+<Footer/>
+</body>
+</html>

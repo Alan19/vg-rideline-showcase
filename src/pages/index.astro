@@ -1,35 +1,20 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from "../components/Layout.astro";
 ---
-
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-    <script>
-        import "beercss";
-        import "material-dynamic-colors";
-        ui("theme", "#039fec");
-    </script>
-	<body>
-		<Header />
-		<main class="responsive">
-			<h1>🎴 Hello Cardfighters!</h1>
-			<p>
-				Welcome to this Vanguard deck infographic site! This site is a repository of infographics for various Vanguard decks to show their key cards, gameplan, and the rough cost to build it. All of the information here is based on EN, including prices and card pools. These infographics are mostly for newer players who are trying to pick out a deck, but more experienced players can use this as a reference on a deck's gameplan, and their strengths and weaknesses.
-			</p>
-            <h3>Rating Explanation</h3>
-			<p>
-                The infographics use a rating scale of 0 to 4 for both pricing and performance. Each point in the pricing section is ~$50, rounded up. However, since card prices and change quickly, do not expect it to be super accurate. In addition, the pricing rating is split into core and generic cards, with the core cards specifically refering to the archetype the deck uses (and / or clan support for encounter cards), and generic cards being cards that are outside of the archetype, excluding things like triggers and sentinels. The price of the triggers and sentinels are not included in these infographics, but in general they will have a rating of 1, as triggers and sentinels should not exceed $50 for base rarity.
-			</p>
-            <p>
-                For the performance section, I decided to not include an overall category to decks as meta rankings can change rather frequently, and it is intended for these infographics to only be updated when the deck gets new (and meaningful) support. Offense generally refers to the ability of a deck to deal damage to your opponent and how fast can the deck remove cards from your opponent. Control generally refers to a deck's ability to slow down the other deck's gameplan and prevent them from achieving their ideal boardstate. Value generally refers to a deck's ability to gain card advantage and improve the quality of their drive checks or the amount of shield in hand.
-            </p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+    <main class="responsive">
+        <h1>🎴 Hello Cardfighters!</h1>
+        <p>
+            Welcome to this Vanguard deck infographic site! This site is a repository of infographics for various Vanguard decks to show their key cards, gameplan, and the rough cost to build it. All of the information here is based on EN, including prices and card pools. These infographics are mostly for newer players who are trying to pick out a deck, but more experienced players can use this as a reference on a deck's gameplan, and their strengths and weaknesses.
+        </p>
+        <h3>Rating Explanation</h3>
+        <p>
+            The infographics use a rating scale of 0 to 4 for both pricing and performance. Each point in the pricing section is ~$50, rounded up. However, since card prices and change quickly, do not expect it to be super accurate. In addition, the pricing rating is split into core and generic cards, with the core cards specifically refering to the archetype the deck uses (and / or clan support for encounter cards), and generic cards being cards that are outside of the archetype, excluding
+            things like triggers and sentinels. The price of the triggers and sentinels are not included in these infographics, but in general they will have a rating of 1, as triggers and sentinels should not exceed $50 for base rarity.
+        </p>
+        <p>
+            For the performance section, I decided to not include an overall category to decks as meta rankings can change rather frequently, and it is intended for these infographics to only be updated when the deck gets new (and meaningful) support. Offense generally refers to the ability of a deck to deal damage to your opponent and how fast can the deck remove cards from your opponent. Control generally refers to a deck's ability to slow down the other deck's gameplan and prevent them from
+            achieving their ideal boardstate. Value generally refers to a deck's ability to gain card advantage and improve the quality of their drive checks or the amount of shield in hand.
+        </p>
+    </main>
+</Layout>

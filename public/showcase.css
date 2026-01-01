@@ -16,3 +16,7 @@
 .tinier-space {
     gap: 4px !important;
 }
+
+body {
+    transition: background-color 1000ms linear;
+}
