@@ -17,7 +17,7 @@ const {art, id, title} = Astro.props
 <a href={`/decks/${id}/`} style="display: contents">
     <article class="no-padding border">
         <Picture formats={['webp', 'avif']} src={art} alt={title} class="responsive medium" transition:name={`img_${title}`} style={{objectPosition: "top", objectFit: "cover"}} />
-        <div class="absolute bottom left right padding bottom-shadow white-text">
+        <div class="absolute bottom left right padding bottom-shadow white-text" transition:animate="none">
             <nav>
                 <h6>{title}</h6>
             </nav>

@@ -27,7 +27,7 @@ function getFlag() {
 }
 ---
 <Layout {...props}>
-    <main class="responsive" style="transition: background-color 1000ms linear;overflow-y: scroll">
+    <main class="responsive" style="overflow-y: scroll">
         <div class="small-padding center tiny-space" style="display: flex;gap: 1rem">
             <div class="grid" style="flex: 10;">
                 <div class="s3 l2">
@@ -38,15 +38,14 @@ function getFlag() {
                         <h2 class="primary-text">{props.title}</h2>
                         <button class="chip fill round large">
                             <span>{props.nation}</span>
-                            <img class="responsive background" src={getFlag().src}>
+                            <img class="responsive" style="object-fit: contain;background: white" src={getFlag().src}>
                         </button>
                     </div>
                     <slot/>
                     <div>
                         <b>Advantages</b>
                         <div style="width: 100%; line-height: 2.5">
-                            {props.advantages.map(value =>
-                                    <button class="chip no-margin" style="margin-right: 3px !important;">{value}</button>)}
+                            {props.advantages.map(value => <button class="chip no-margin" style="margin-right: 3px !important;">{value}</button>)}
                         </div>
                     </div>
                     <div class="top-padding">
