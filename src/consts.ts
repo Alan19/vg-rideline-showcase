@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'VG Infographics';
 export const SITE_DESCRIPTION = 'Welcome to this Vanguard infographic site!';
+export const REPO_NAME = 'vg-rideline-showcase'

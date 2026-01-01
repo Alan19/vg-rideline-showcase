@@ -1,21 +1,22 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import ModeToggle from './ModeToggle.astro';
+import {REPO_NAME} from "../consts.ts";
 ---
 
 <nav class="m l left">
     <header>
 
     </header>
-    <HeaderLink href="/">
+    <HeaderLink href={`/${REPO_NAME}/`}>
         <i>home</i>
         <span>Home</span>
     </HeaderLink>
-    <HeaderLink href="/decks">
+    <HeaderLink href={`/${REPO_NAME}/decks`}>
         <i>playing_cards</i>
         <span>Decks</span>
     </HeaderLink>
-    <HeaderLink href="/about">
+    <HeaderLink href={`/${REPO_NAME}/about`}>
         <i >info</i>
         <span>About</span>
     </HeaderLink>
