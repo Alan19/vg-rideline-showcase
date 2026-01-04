@@ -3,22 +3,22 @@ title: Krysrain
 nation: Lyrical Monasterio
 card-art: '../../../assets/Krysrain.png'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_004.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_140.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzlbt01/dzlbt01_040.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzlbt01/dzlbt01_028.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_016.png"
 ]
 key-cards: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_004.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_047.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_005.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_005.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_017.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt05/dzbt05_041.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_018.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_017.png"
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_003.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_018.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_019.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_Re49.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_018.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dpr/dpr_779.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dlbt04/dlbt04_015.png"
 ]
 advantages:
   - 4 Attacks

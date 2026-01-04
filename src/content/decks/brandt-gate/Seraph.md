@@ -3,22 +3,22 @@ title: Seraph
 nation: Brandt Gate
 card-art: '../../../assets/Seraph.webp'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_004.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_092.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_089.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_086.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_007.png"
 ]
 key-cards: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt08/dzbt08_004.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_047.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_005.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_005.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss12/dss12_019.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_008.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_re15.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt11/dzbt11_093.png"
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_003.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_018.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_019.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_re41.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss08/dss08_022.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_003.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_008.png"
 ]
 advantages:
   - 4 Attacks
