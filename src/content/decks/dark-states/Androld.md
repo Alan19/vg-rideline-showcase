@@ -19,24 +19,19 @@ generics: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_002.png"
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - Up to 5 attacks
+  - Shrugs off small attacks
+  - Toolboxes "Direful Dolls" that are out of the deck
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
+  - Low power
+  - Needs Persona Ride for offense
 deck-notes: 
   - Prefer shield front triggers (Diabolos Girls, Natalia)
   - Prefers Radiance Caliburn as Regalis Piece
-core-cost: 3
+core-cost: 1
 generics-cost: 2
-offense: 3
-control: 2
-value: 2
+offense: 1
+control: 0
+value: 3
 ---
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+Use your units' skills to put "Direful Dolls" into your soul or bind them. Androld call up to 3 "Direful Dolls" from your soul, and then gain an extra drive check. Whenever he's attacked, he can guard with 1 "Direful Doll" from your bind zone. Move your "Direful Dolls" from soul RC, RC to bind, bind to drop, and then from drop back to soul to maintain your offense and defense!

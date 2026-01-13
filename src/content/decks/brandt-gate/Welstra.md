@@ -17,24 +17,21 @@ key-cards: [
 generics: [
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - Power draining
+  - Effect damage
+  - 5 attacks
+  - Board wipes
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
+  - Resource intensive
+  - Complex combos
 deck-notes: 
-  - Prefer shield front triggers (Diabolos Girls, Natalia)
-  - Prefers Radiance Caliburn as Regalis Piece
-core-cost: 3
-generics-cost: 2
+  - Prefers shield draw triggers (Ameliorate Connector)
+  - "Prefers Fire Regalis or Protection: Twincast as Regalis Piece"
+core-cost: 2
+generics-cost: 0
 offense: 3
-control: 2
+control: 3
 value: 2
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+Add various Product cards using Stratzer and Uber, and then set them in the order zone with Welstra's Divine Skill and Freiheit's on-call skill. Use "Mobile Fortress of Obliteration, Freishutz Maximum" to reduce your opponent's power and retire their rear-guards, and on your fourth turn, operate "Extreme Satellite Weaponry, Euryanthe" to deal one damage to your opponent's vanguard! Use Freiheit and Welstra's Operate skills during the battle phase to get extra attacks with Freishutz Maximum!
