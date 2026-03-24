@@ -21,24 +21,22 @@ generics: [
   ""
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
+  - 4-5 Attacks
+  - Vanguard with Triple Drive
+  - Versatile array of rear-guards
   - Scaling Power
   - Rear-guards with critical
+  - Potential board-wipe
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
+  - Talismans take resources to set up
 deck-notes: 
-  - Prefer shield front triggers (Diabolos Girls, Natalia)
-  - Prefers Radiance Caliburn as Regalis Piece
+  - Prefers shield front triggers (Blaze Maiden, Parama) or soul front triggers (Stealth Fiend, Futakuchiyo)
+  - "Prefers Protection: Twincast or Fire Regalis as Regalis Piece"
 core-cost: 3
-generics-cost: 2
+generics-cost: 1
 offense: 3
 control: 2
 value: 2
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+Use XOverDress with Trickstar & Suendi and other Prayer Dragon to call powerful Talismans such as Stravairina and Ars Vairina and unleash powerful effects such as giving your vanguard Triple Drive, restanding an additional unit, or retiring all of your opponent's rear-guards! Use Mirrors Vairina to recover resources by counter charging or drawing extra cards. 

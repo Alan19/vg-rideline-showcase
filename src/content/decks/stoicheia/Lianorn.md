@@ -21,24 +21,21 @@ generics: [
   ""
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - 3-6 attacks
+  - Extremely big vanguard attack
+  - Power increase can impact up to 3 attacks
+  - 3 drive checks
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
+  - Requires opponent to be at grade 3 for extra attacks
+  - Can be vulnerable to control
+  - Switching from Traumend to Vivace does not activate Persona Ride 
 deck-notes: 
   - Prefer shield front triggers (Diabolos Girls, Natalia)
   - Prefers Radiance Caliburn as Regalis Piece
-core-cost: 3
-generics-cost: 2
+core-cost: 2
+generics-cost: 3
 offense: 3
-control: 2
+control: 0
 value: 2
 ---
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+Lianorn is able to be boosted by multiple rear-guards when she attacks! Use card like Rosarium Fairy and In the Forest Flourishing in Silverwhite to increase the power of your boosters, which can contribute to Lianorn and cards that gain the power of other units like Rosarium Fairy and Mollmoire! Stay on Lianorn "Traumend" for more drive checks, or ride Lianorn "Vivace" if you want more attacks

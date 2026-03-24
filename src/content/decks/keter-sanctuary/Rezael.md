@@ -21,24 +21,23 @@ generics: [
   ""
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - 4-5 attacks
+  - Guard restrict
+  - Drop zone toolboxing
+  - Rear-guards with drive checks
+  - Can check top deck
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
+  - Needs 4+ damage to unlock offensive options
+  - Lots of grade 3 cards in deck
+  - Reliant on Persona Ride for power
 deck-notes: 
-  - Prefer shield front triggers (Diabolos Girls, Natalia)
-  - Prefers Radiance Caliburn as Regalis Piece
+  - Prefer shield front triggers (Bard of Heavenly Song, Alpacc)
+  - "Prefers Protection: Twincast as Regalis Piece"
+  - Prefer Idosfaro as Overtrigger
 core-cost: 3
-generics-cost: 2
-offense: 3
-control: 2
+generics-cost: 4
+offense: 2
+control: 0
 value: 2
 ---
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+Rezael's skills can call units from the drop zone when you attack, allowing you to reuse rear-guards that have been retired! Use Rezael's Divine Skill to return critical triggers back to your deck, gain an extra drive, and heal when you check any trigger on your 6th damage! Pair those effects with cards like Nilberis for checking the top deck of your deck, Gabelius for getting an extra drive check, and Rifistor for stopping your opponent from calling sentinels!

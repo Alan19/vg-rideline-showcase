@@ -21,24 +21,22 @@ generics: [
   ""
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
+  - Rear-guard with drive checks
+  - 4-6 attacks
   - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - 3 drives on Vanguard attack
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
+  - Vanguard has a cost of EB4
+  - Lackluster power numbers
 deck-notes: 
-  - Prefer shield front triggers (Diabolos Girls, Natalia)
-  - Prefers Radiance Caliburn as Regalis Piece
+  - Prefer shield front triggers (Bard of Heavenly Song, Alpacc)
+  - Prefers Fire Regalis as Regalis Piece
+  - Prefers Violurm or Idosfaro as Overtrigger
 core-cost: 3
-generics-cost: 2
-offense: 3
-control: 2
-value: 2
+generics-cost: 4
+offense: 2
+control: 0
+value: 3
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+Bind your units with Liael=Draconis' skill in order to call them from your deck during the battle phase! By having bound cards, you can use Liael=Amorta's perfect guard effect! Unleash up to 6 attacks when you use Liael's Divine Skill! Blest Dragon, Gabewelius can also perform an additional drive check once you have 4 or more damage!
