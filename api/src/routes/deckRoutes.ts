@@ -2,22 +2,11 @@ import type {Request, Response} from 'express';
 import {Router} from 'express';
 import Papa from "papaparse";
 import fs from "node:fs";
-import cardDB from "../deck-cost-csv/cardsDB.json";
 import path from "node:path";
+import {type DeckCard, getCardPrice} from "../../../src/util/PricingUtils.ts";
 
 const router = Router();
 
-export type DeckCard = {
-    "Name": string;
-    "Quantity": number;
-    "Type": "Core" | "Generic"
-};
-
-
-export function getCardPrice(name: string): number {
-    let matchedCards = cardDB.filter(card => card.name === name).map(card => Number(card.lowPrice));
-    return matchedCards.length === 0 ? 0 : Math.min(...matchedCards.filter(Boolean));
-}
 
 function getDeckCost(req: Request<{ deck: string }>, res: Response) {
     const deck = req.params.deck;
