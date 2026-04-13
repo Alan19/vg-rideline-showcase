@@ -2,7 +2,6 @@ import {getCollection} from "astro:content";
 
 export async function DeckList() {
     const allDecks = await getCollection('decks');
-    console.log(allDecks.map(value => value.data.title))
 
     return (
         <div>

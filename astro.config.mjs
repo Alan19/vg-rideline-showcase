@@ -11,4 +11,9 @@ export default defineConfig({
     site: 'https://alan19.github.io',
     base: "/vg-rideline-showcase",
     integrations: [mdx(), sitemap(), react()],
+    vite: {
+        ssr: {
+            noExternal: ['beercss']
+        }
+    }
 });

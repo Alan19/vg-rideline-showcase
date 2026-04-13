@@ -1,0 +1,51 @@
+import ui from "beercss";
+import {useStore} from "@nanostores/react";
+import {currentMode, type Mode} from "../mode.ts";
+import {useEffect} from "react";
+import {ClientRouter, ViewTransitions} from "astro:transitions";
+
+
+export function ModeToggle() {
+    const $currentMode = useStore(currentMode)
+
+    function setMode(mode: Mode) {
+        currentMode.set(mode);
+    }
+
+    function nextMode() {
+        switch ($currentMode) {
+            case "auto":
+                currentMode.set('light');
+                break;
+            case "dark":
+                currentMode.set('auto');
+                break;
+            case "light":
+                currentMode.set('dark');
+                break;
+        }
+    }
+
+    function getModeIcon() {
+        switch ($currentMode) {
+            case "auto":
+                return 'auto_mode';
+            case "light":
+                return 'light_mode';
+            case "dark":
+                return 'dark_mode';
+
+        }
+    }
+
+    useEffect(() => {
+        ui('mode', $currentMode)
+    }, [$currentMode])
+    return (
+        <div>
+            <button className="circle transparent" onClick={() => nextMode()}>
+                <i id="mode-element">{getModeIcon()}</i>
+            </button>
+        </div>
+    )
+}

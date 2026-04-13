@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Showcase from "../../layouts/Showcase.astro";
+import Layout from "../../components/Layout.astro";
 
 export async function getStaticPaths() {
 	const posts = await getCollection('decks');
@@ -14,7 +15,8 @@ type Props = CollectionEntry<'decks'>;
 const post = Astro.props;
 const { Content } = await render(post);
 ---
-
-<Showcase {...post.data}>
-	<Content />
-</Showcase>
+<Layout title={post.title} {...post.data}>
+	<Showcase {...post.data}>
+		<Content />
+	</Showcase>
+</Layout>

@@ -19,8 +19,6 @@ const nation = props.nation
     <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
     <script type="module" data-astro-rerun define:vars={{nation}}>
         // For some reason a direct import would not work here, so we're importing in head
-        console.log("Switching to " + nation + " theme")
-        ui('mode', 'system')
         switch (nation) {
             case "Brandt Gate":
                 ui("theme", "#abb3bf");
@@ -45,7 +43,7 @@ const nation = props.nation
                 break;
         }
     </script>
-    <ClientRouter />
+    <ClientRouter/>
 </head>
 <body>
 <Navigation/>

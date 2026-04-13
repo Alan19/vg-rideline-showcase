@@ -1,5 +1,6 @@
 ---
 import {REPO_NAME} from "../consts.ts";
+import {ModeToggle} from "./ModeToggle.tsx";
 
 ---
 <header class="primary-container">
@@ -11,5 +12,7 @@ import {REPO_NAME} from "../consts.ts";
                 Decks
             </button>
         </a>
+        <!--TODO Figure out why this tanks performance-->
+        <ModeToggle client:only />
     </nav>
 </header>

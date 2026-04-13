@@ -1,4 +1,4 @@
-import fs from 'fs';
+import fs from 'node:fs';
 import type {PathOrFileDescriptor} from "node:fs";
 import cardDB from "./cardsDB.json"
 import Papa from "papaparse";
@@ -8,7 +8,7 @@ type DeckCardInfo = {
     "Quantity": number;
 };
 
-function getDeckCost(deckPath: PathOrFileDescriptor) {
+export function getDeckCost(deckPath: PathOrFileDescriptor) {
     let cardPrices: [string, number][] = Papa.parse<DeckCardInfo>(fs.readFileSync(deckPath).toString(), {header: true, dynamicTyping: true, skipEmptyLines: true}).data.map(value => {
         let lowestPrice = Math.min(...cardDB.filter(card => card.name === value["Name"]).map(card => Number(card.lowPrice)));
         return [`${value.Name} x${value.Quantity}`, lowestPrice * value.Quantity];

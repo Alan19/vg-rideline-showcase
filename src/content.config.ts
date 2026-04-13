@@ -11,6 +11,14 @@ export enum Nation {
     lyrical = "Lyrical Monasterio"
 }
 
+
+export type DeckBuildingNotes = {
+    // Triggers: Special ratios, preferred effect trigger type
+    // PG: Specific callouts, Elementaria yes / no / optional
+    // OT
+    // Regalis Piece
+}
+
 const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
 	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),

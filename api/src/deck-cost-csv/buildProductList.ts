@@ -1,6 +1,7 @@
 import axios from "axios";
 import Papa from "papaparse";
-import fs from "fs";
+import fs from "node:fs";
+import type {Card} from "./card.ts";
 
 const dProductIDList = [
     2783,
@@ -83,31 +84,32 @@ const dProductIDList = [
     24389,
     24418,
     24523,
-    24562
+    24562,
+    24585,
+    24586,
+    24589,
+    24588,
+    24615,
+    24651,
+    24652,
+    24636,
+    24592
 ]
-export type Card = {
-    name: string,
-    cleanName: string,
-    productId: number,
-    groupId: number,
-    url: string,
-    lowPrice: number,
-    midPrice: number,
-    highPrice: number,
-    marketPrice: number
+
+async function parseVanguardSet(set: string) {
+    const value = await axios.get(set);
+    return Papa.parse<unknown & Card>(value.data, {header: true, dynamicTyping: true, skipEmptyLines: true}).data
 }
 
 export function buildProductList() {
-    async function parseVanguardSet(set: string) {
-        const value = await axios.get(set);
-        return Papa.parse<unknown & Card>(value.data, {header: true, dynamicTyping: true, skipEmptyLines: true}).data
-    }
-
     Promise.all(dProductIDList.map(productID => `https://tcgcsv.com/tcgplayer/16/${productID}/ProductsAndPrices.csv`)
         .map(set => parseVanguardSet(set)))
-        .then(value => fs.writeFileSync("./cardsDB.json", JSON.stringify(value.flat()
-            .filter(cardInfo => !['Starter Deck', 'Booster Box', 'Deckset', 'Trial Deck', 'Booster Pack', 'Start Deck', 'Booster Case', 'Stardust Blade Deck'].some(name => cardInfo.name.includes(name)))
-            .map(cardInfo => ({name: cardInfo.name, cleanName: cardInfo.cleanName, productId: cardInfo.productId, groupId: cardInfo.groupId, url: cardInfo.url, lowPrice: cardInfo.lowPrice})), null, 1)))
+        .then(value => {
+            let blacklistedEntries = ['Starter Deck', 'Booster Box', 'Deckset', 'Trial Deck', 'Booster Pack', 'Start Deck', 'Booster Case', 'Stardust Blade Deck', 'Booster Display'];
+            return fs.writeFileSync("./cardsDB.json", JSON.stringify(value.flat()
+                .filter(cardInfo => !blacklistedEntries.some(name => cardInfo.name.includes(name)))
+                .map(cardInfo => ({name: cardInfo.name, cleanName: cardInfo.cleanName, productId: cardInfo.productId, groupId: cardInfo.groupId, url: cardInfo.url, lowPrice: cardInfo.lowPrice})), null, 1));
+        })
 }
 
 buildProductList()
