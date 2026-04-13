@@ -1,10 +1,14 @@
 ---
 import { Prices } from "../../components/Prices";
 import Layout from "../../layouts/Layout.astro";
+import {GET} from "../api/cardsDB.json.ts";
+
+let prices = await GET(Astro)
+const data = await prices.json();
 ---
 <Layout>
     <main class="responsive">
         <h1>Hello World!</h1>
-        <Prices />
+        <Prices data={data} />
     </main>
 </Layout>
