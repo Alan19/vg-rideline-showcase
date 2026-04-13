@@ -1,5 +1,4 @@
 import type {InferEntrySchema} from "astro:content";
-import {Picture} from "astro:assets";
 import dragonEmpire from "../assets/flags/Dragon Empire.png"
 import keterSanctuary from "../assets/flags/Keter Sanctuary.png"
 import brandtGate from "../assets/flags/Brandt Gate.png"
@@ -8,6 +7,7 @@ import darkStates from "../assets/flags/Dark States.png"
 import lyricalMonasterio from "../assets/flags/Lyrical Monasterio.png"
 import {Nation} from "../content.config.ts";
 import type {ReactNode} from "react";
+import '../styles/showcase.css'
 
 function getFlag(nation: Nation) {
     switch (nation) {
@@ -33,14 +33,13 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, R
         <div className="grid" style={{flex: 10}}>
             <div className="s12 m3 l2">
                 {props.cardArt}
-                {/*<Picture class="card-art" src={props['card-art']} alt={props.title} transition:name={`img_${props.title}`}/>*/}
             </div>
             <article className="s12 m9 l7">
                 <div style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
                     <h2 className="primary-text">{props.title}</h2>
                     {flag && <button className="chip fill round large">
                         <span>{nation}</span>
-                        <img className="responsive" style={{objectFit: "contain",background: "white"}} src={flag.src}/>
+                        <img className="responsive" style={{objectFit: "contain", background: "white"}} src={flag.src}/>
                     </button>}
 
                 </div>
