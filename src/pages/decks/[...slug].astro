@@ -1,7 +1,9 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
-import Showcase from "../../layouts/Showcase.astro";
-import Layout from "../../components/Layout.astro";
+import Layout from '../../layouts/Layout.astro';
+import {DeckShowcase} from '../../layouts/DeckShowcase.tsx';
+import {Picture} from "astro:assets";
+import {getImage} from "astro/assets";
 
 export async function getStaticPaths() {
 	const posts = await getCollection('decks');
@@ -14,9 +16,11 @@ type Props = CollectionEntry<'decks'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
 ---
-<Layout title={post.title} {...post.data}>
-	<Showcase {...post.data}>
-		<Content />
-	</Showcase>
+<Layout {...post.data}>
+	<DeckShowcase {...post.data}>
+		<Picture class="card-art" src={post.data['card-art']} alt={post.data.title} transition:name={`img_${post.data.title}`} slot="card-art"/>
+		<Content slot="content" />
+	</DeckShowcase>
 </Layout>

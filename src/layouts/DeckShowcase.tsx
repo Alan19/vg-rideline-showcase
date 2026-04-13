@@ -1,0 +1,143 @@
+import type {InferEntrySchema} from "astro:content";
+import {Picture} from "astro:assets";
+import dragonEmpire from "../assets/flags/Dragon Empire.png"
+import keterSanctuary from "../assets/flags/Keter Sanctuary.png"
+import brandtGate from "../assets/flags/Brandt Gate.png"
+import stoicheia from "../assets/flags/Stoicheia.png"
+import darkStates from "../assets/flags/Dark States.png"
+import lyricalMonasterio from "../assets/flags/Lyrical Monasterio.png"
+import {Nation} from "../content.config.ts";
+import type {ReactNode} from "react";
+
+function getFlag(nation: Nation) {
+    switch (nation) {
+        case "Keter Sanctuary":
+            return keterSanctuary;
+        case "Stoicheia":
+            return stoicheia;
+        case "Dragon Empire":
+            return dragonEmpire;
+        case "Brandt Gate":
+            return brandtGate;
+        case "Dark States":
+            return darkStates;
+        case "Lyrical Monasterio":
+            return lyricalMonasterio;
+    }
+}
+
+export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, ReactNode>) {
+    const {nation} = props
+    let flag = getFlag(nation);
+    return <main className="responsive" style={{overflowY: "scroll"}}>
+        <div className="grid" style={{flex: 10}}>
+            <div className="s12 m3 l2">
+                {props.cardArt}
+                {/*<Picture class="card-art" src={props['card-art']} alt={props.title} transition:name={`img_${props.title}`}/>*/}
+            </div>
+            <article className="s12 m9 l7">
+                <div style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
+                    <h2 className="primary-text">{props.title}</h2>
+                    {flag && <button className="chip fill round large">
+                        <span>{nation}</span>
+                        <img className="responsive" style={{objectFit: "contain",background: "white"}} src={flag.src}/>
+                    </button>}
+
+                </div>
+                {props.content}
+                <div>
+                    <b>Advantages</b>
+                    <div style={{width: "100%", lineHeight: 2.5}}>
+                        {props.advantages.map(value =>
+                            <button className="chip no-margin" style={{marginRight: "3px !important"}}>{value}</button>)}
+                    </div>
+                </div>
+                <div className="top-padding">
+                    <b>Disadvantages</b>
+                    <div style={{width: "100%", lineHeight: 2.5}}>
+                        {props.disadvantages.map(value => <button className="chip no-margin" style={{marginRight: "3px !important"}}>{value}</button>)}
+                    </div>
+                </div>
+            </article>
+            <article className="s12 m4 l3" style={{display: "flex", flexDirection: "column", gap: "1rem"}}>
+                <div>
+                    <h3>Other Info</h3>
+                    <table className="no-space">
+                        <thead>
+                        <tr>
+                            <th>Price Category</th>
+                            <th>Rating</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>Core</td>
+                            <td>{props['core-cost']}</td>
+                        </tr>
+                        <tr>
+                            <td>Generics</td>
+                            <td>{props['generics-cost']}</td>
+                        </tr>
+                        <thead>
+                        <tr>
+                            <th>Viability Category</th>
+                            <th>Rating</th>
+                        </tr>
+                        <tr>
+                            <td>Offense</td>
+                            <td>{props.offense}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Control</td>
+                            <td>{props.control}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Value</td>
+                            <td>{props.value}</td>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <hr/>
+                <div>
+                    <h6>Deck Building Notes</h6>
+                    <ul style={{paddingLeft: "1rem", marginTop: 0}}>
+                        {props['deck-notes'].map(note =>
+                            <li>{note}</li>)}
+                    </ul>
+                </div>
+                <hr/>
+                <div>
+                    <h6>Handy Links</h6>
+                    <a href={`https://vg-paradox.com/subpage/DeckInfo/ENG/D/${props.title}Tops`} className="underline">{props.title}on VGParadox</a>
+                </div>
+            </article>
+            <div className="grid m8 s12 l12">
+                <article className="primary-container s12 l4">
+                    <div>
+                        <b>Ride Line</b>
+                        <div className="grid tinier-space">
+                            {props.rideline.map((card, index) => <img className="s3 vg-card" src={(typeof card === "object" ? card.src : card) as string} alt={`Grade ${index} rideline card`}/>)}
+                        </div>
+                    </div>
+                </article>
+                <article className="secondary-container s12 l4">
+                    <div>
+                        <b>Key Cards</b>
+                        <div className="grid tinier-space">
+                            {props['key-cards'].map(card => <img className="s3 vg-card" src={typeof card === "object" ? card.src : card} alt=""/>)}
+                        </div>
+                    </div>
+                </article>
+                <article className="tertiary-container s12 l4">
+                    <b>Generic Cards</b>
+                    <div className="grid tinier-space">
+                        {props.generics.map(card => <img className="s3 vg-card" src={typeof card === "object" ? card.src : card} alt=""/>)}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+}

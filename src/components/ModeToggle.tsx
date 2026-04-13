@@ -1,16 +1,11 @@
 import ui from "beercss";
 import {useStore} from "@nanostores/react";
-import {currentMode, type Mode} from "../mode.ts";
+import {currentMode} from "../mode.ts";
 import {useEffect} from "react";
-import {ClientRouter, ViewTransitions} from "astro:transitions";
 
 
 export function ModeToggle() {
-    const $currentMode = useStore(currentMode)
-
-    function setMode(mode: Mode) {
-        currentMode.set(mode);
-    }
+    const $currentMode = useStore(currentMode) ?? 'auto'
 
     function nextMode() {
         switch ($currentMode) {
@@ -34,13 +29,13 @@ export function ModeToggle() {
                 return 'light_mode';
             case "dark":
                 return 'dark_mode';
-
         }
     }
 
     useEffect(() => {
         ui('mode', $currentMode)
     }, [$currentMode])
+
     return (
         <div>
             <button className="circle transparent" onClick={() => nextMode()}>

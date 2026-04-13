@@ -2,8 +2,8 @@
 import {getCollection} from 'astro:content';
 import {SITE_DESCRIPTION, SITE_TITLE} from '../../consts';
 import DeckLink from "../../components/DeckLink.astro";
-import Layout from "../../components/Layout.astro";
 import {Nation} from "../../content.config.ts";
+import Layout from '../../layouts/Layout.astro';
 
 const posts = (await getCollection('decks'))
 ---
