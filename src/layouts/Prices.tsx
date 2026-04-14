@@ -1,6 +1,6 @@
 import {getCollection} from "astro:content";
-import {getDeckPrices} from "../util/PricingUtils.ts";
-import type {Card} from "../../api/src/deck-cost-csv/card.ts";
+import {getDeckPrices} from "../prices/PricingUtils.ts";
+import type {Card} from "../prices/card.ts";
 
 export async function Prices(props: Readonly<{ data: Card[] }>) {
     const allDecks = await getCollection('decks');

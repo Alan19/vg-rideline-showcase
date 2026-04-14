@@ -1,7 +1,12 @@
 import axios from "axios";
 import Papa from "papaparse";
-import type {Card} from "../../../api/src/deck-cost-csv/card.ts";
-import type {APIRoute} from "astro";
+import type {Card} from "../../prices/card.ts";
+import fs from "node:fs";
+import {format, isBefore} from "date-fns";
+import {UTCDate} from "@date-fns/utc"
+
+const isDev = import.meta.env.DEV;
+const userAgent = import.meta.env.USER_AGENT
 
 const dProductIDList = [
     2783,
@@ -97,30 +102,31 @@ const dProductIDList = [
 ]
 
 async function parseVanguardSet(set: string) {
-    const value = await axios.get(set);
+    const value = await axios.get(set, {headers: {"User-Agent": userAgent}});
     return Papa.parse<unknown & Card>(value.data, {header: true, dynamicTyping: true, skipEmptyLines: true}).data
 }
 
 async function getCardPriceList() {
     const cards = await Promise.all(dProductIDList.map(productID => `https://tcgcsv.com/tcgplayer/16/${productID}/ProductsAndPrices.csv`).map(set => parseVanguardSet(set))).then(value1 => value1.flat());
     let blacklistedEntries = ['Starter Deck', 'Booster Box', 'Deckset', 'Trial Deck', 'Booster Pack', 'Start Deck', 'Booster Case', 'Stardust Blade Deck', 'Booster Display'];
-    return JSON.stringify(cards.filter(cardInfo => !blacklistedEntries.some(name => cardInfo.name.includes(name)))
-        .map(cardInfo_1 => ({name: cardInfo_1.name, cleanName: cardInfo_1.cleanName, productId: cardInfo_1.productId, groupId: cardInfo_1.groupId, url: cardInfo_1.url, lowPrice: cardInfo_1.lowPrice})), null, 1);
+    return cards.filter(cardInfo => !blacklistedEntries.some(name => cardInfo.name.includes(name)))
+        .map(cardInfo_1 => ({name: cardInfo_1.name, cleanName: cardInfo_1.cleanName, productId: cardInfo_1.productId, groupId: cardInfo_1.groupId, url: cardInfo_1.url, lowPrice: cardInfo_1.lowPrice}));
 }
 
-
-// export async function GET(): Promise<APIRoute> {
-//     // Do some stuff here
-//     const cardPriceList = await getCardPriceList();
-//     // Return a 200 status and a response to the frontend
-//     return new Response(
-//         JSON.stringify({
-//             greeting: 'Hello',
-//         }),
-//     )
-//     return new Response(cardPriceList, {status: 200,});
-// }
-
 export async function GET() {
-    return new Response(await getCardPriceList(), {status: 200,});
+    if (isDev) {
+        // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
+        const filePath = "src/pages/api/cardsDB.json";
+        const mostRecent21GMT = new UTCDate().getHours() < 21 ? (new UTCDate().setUTCHours(23, 0, 0, 0) -  86400000) : new UTCDate().setUTCHours(23, 0, 0, 0)
+        console.debug(`The most recent 21:00 GMT is`, format(mostRecent21GMT, 'PPpp'))
+        const isDbStale = isBefore(fs.statSync(filePath).mtime, mostRecent21GMT);
+        if (!fs.existsSync(filePath) || isDbStale) {
+            const value = await getCardPriceList();
+            console.log("Updating card DB!")
+            fs.writeFileSync(filePath, JSON.stringify(value))
+        }
+        return new Response(fs.readFileSync(filePath).toString(), {status: 200,});
+    } else {
+        return new Response(JSON.stringify(await getCardPriceList()), {status: 200,});
+    }
 }

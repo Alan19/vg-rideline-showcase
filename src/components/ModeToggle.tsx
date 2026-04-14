@@ -6,7 +6,6 @@ import {useEffect} from "react";
 
 export function ModeToggle() {
     const $currentMode = useStore(currentMode) ?? 'auto'
-
     function nextMode() {
         switch ($currentMode) {
             case "auto":

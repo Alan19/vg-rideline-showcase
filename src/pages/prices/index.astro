@@ -1,7 +1,7 @@
 ---
-import { Prices } from "../../components/Prices";
+import { Prices } from "../../layouts/Prices.tsx";
 import Layout from "../../layouts/Layout.astro";
-import {GET} from "../api/cardsDB.json.ts";
+import {GET} from "../api/_cardsDB.json.ts";
 
 let prices = await GET(Astro)
 const data = await prices.json();

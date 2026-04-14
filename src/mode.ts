@@ -3,4 +3,4 @@ import {persistentAtom} from "@nanostores/persistent";
 
 export type Mode = 'auto' | 'light' | 'dark';
 
-export const currentMode: WritableAtom<Mode> = persistentAtom('auto')
+export const currentMode: WritableAtom<Mode> = persistentAtom('mode', 'auto')

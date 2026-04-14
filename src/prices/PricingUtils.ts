@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import Papa from "papaparse";
-import type {Card} from "../../api/src/deck-cost-csv/card.ts";
+import type {Card} from "./card.ts";
 
 export type DeckCard = {
     "Name": string;
@@ -31,7 +31,7 @@ function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardD
 type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean };
 
 export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undefined {
-    let filePath = `api/src/routes/deck/${deck}.csv`;
+    let filePath = `src/prices/deck/${deck}.csv`;
     if (fs.existsSync(filePath)) {
         let deckCards = Papa.parse<DeckCard>(fs.readFileSync(filePath).toString(), {header: true, dynamicTyping: true, skipEmptyLines: true}).data;
         let coreCards = deckCards.filter(card => card.Type === "Core");
