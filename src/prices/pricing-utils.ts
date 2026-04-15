@@ -28,7 +28,7 @@ function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardD
     };
 }
 
-type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean };
+type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean,  };
 
 export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undefined {
     let filePath = `src/prices/deck/${deck}.csv`;
@@ -38,11 +38,15 @@ export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undef
         let corePrice = coreCards.map(value => getCardPrice(value.Name, cardDB) * value.Quantity).reduce((sum, current) => sum + current, 0);
         let genericCards = deckCards.filter(card => card.Type === "Generic");
         const genericsPrice = genericCards.map(value => getCardPrice(value.Name, cardDB) * value.Quantity).reduce((sum, current) => sum + current, 0);
+        const missingCards = deckCards.some(card => getCardPrice(card.Name, cardDB) === 0);
+        if (missingCards) {
+            console.log(getCostBreakdown(coreCards, genericCards, cardDB))
+        }
         return {
             core: Number(corePrice.toFixed(2)),
             generics: Number(genericsPrice.toFixed(2)),
             total: Number((corePrice + genericsPrice).toFixed(2)),
-            missingCards: deckCards.some(card => getCardPrice(card.Name, cardDB) === 0)
+            missingCards: missingCards,
         };
     } else {
         return undefined;

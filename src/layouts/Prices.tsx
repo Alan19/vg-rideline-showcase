@@ -1,5 +1,5 @@
 import {getCollection} from "astro:content";
-import {getDeckPrices} from "../prices/PricingUtils.ts";
+import {getDeckPrices} from "../prices/pricing-utils.ts";
 import type {Card} from "../prices/card.ts";
 
 export async function Prices(props: Readonly<{ data: Card[] }>) {
