@@ -117,7 +117,7 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, R
                     <div>
                         <b>Ride Line</b>
                         <div className="grid tinier-space">
-                            {props.rideline.map((card, index) => <img className="s3 vg-card" src={(typeof card === "object" ? card.src : card) as string} alt={`Grade ${index} rideline card`}/>)}
+                            {props.ridelineCardImages}
                         </div>
                     </div>
                 </article>
@@ -125,14 +125,14 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, R
                     <div>
                         <b>Key Cards</b>
                         <div className="grid tinier-space">
-                            {props['key-cards'].map(card => <img className="s3 vg-card" src={typeof card === "object" ? card.src : card} alt=""/>)}
+                            {props.keyCardImages}
                         </div>
                     </div>
                 </article>
                 <article className="tertiary-container s12 l4">
                     <b>Generic Cards</b>
                     <div className="grid tinier-space">
-                        {props.generics.map(card => <img className="s3 vg-card" src={typeof card === "object" ? card.src : card} alt=""/>)}
+                        {props.genericCardImages}
                     </div>
                 </article>
             </div>

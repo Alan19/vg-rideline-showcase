@@ -17,10 +17,18 @@
     border-radius: 0;
 }
 
+.clickable-img {
+    cursor: pointer;
+}
+
 .two-rounded-corners {
     border-radius: 2rem 0 2rem 0 !important;
 }
 
 .tinier-space {
     gap: 4px !important;
+}
+
+body:has(:popover-open) *:is(.clickable-img, button, a) {
+    pointer-events: none;
 }

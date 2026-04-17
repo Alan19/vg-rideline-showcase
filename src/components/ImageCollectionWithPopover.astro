@@ -1,0 +1,25 @@
+---
+import Image from 'astro/components/Image.astro'
+
+type Props = {
+    images: (string | {
+        src: string
+        width: number
+        height: number
+        format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif"
+    })[], category: string
+}
+const {images, category} = Astro.props
+---
+{images.filter(value => value).map((card, index) => {
+    const id = `${category}-${index}`;
+    const selector = `#${id}`;
+    const onClick = `document.querySelector("${selector}").togglePopover()`
+    return (
+    <>
+        <Image class="s3 vg-card clickable-img auto-height" widths={[200]} src={(typeof card === "object" ? card.src : card) as string} inferSize={true} alt=`Grade ${index} rideline card` onclick={onClick}/>
+        <dialog popover={"auto"} class="center" id={id}>
+            <img class="vg-card" src={(typeof card === "object" ? card.src : card)} alt={`${category} card ${index}`}/>
+        </dialog>
+    </>);
+    })}

@@ -15,5 +15,13 @@ export default defineConfig({
         ssr: {
             noExternal: ['beercss']
         }
+    },
+    image: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '**.cf-vanguard.com'
+            }
+        ]
     }
 });

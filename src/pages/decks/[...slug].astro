@@ -1,26 +1,48 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
+import {type CollectionEntry, getCollection, render} from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import {DeckShowcase} from '../../layouts/DeckShowcase.tsx';
 import {Picture} from "astro:assets";
 import {getImage} from "astro/assets";
+import Image from 'astro/components/Image.astro';
+import ImageCollectionWithPopover from "../../components/ImageCollectionWithPopover.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('decks');
-	return posts.map((post) => ({
-		params: { slug: post.id },
-		props: post,
-	}));
+    const posts = await getCollection('decks');
+    return posts.map((post) => ({
+        params: {slug: post.id},
+        props: post,
+    }));
 }
 type Props = CollectionEntry<'decks'>;
 
 const post = Astro.props;
-const { Content } = await render(post);
-
+const {Content} = await render(post);
 ---
 <Layout {...post.data}>
-	<DeckShowcase {...post.data}>
-		<Picture class="card-art" src={post.data['card-art']} alt={post.data.title} transition:name={`img_${post.data.title}`} slot="card-art"/>
-		<Content slot="content" />
-	</DeckShowcase>
+    <DeckShowcase {...post.data}>
+        <Image widths={[500]} class="card-art" src={post.data['card-art']} alt={post.data.title} transition:name={`img_${post.data.title}`} slot="card-art"/>
+        <Content slot="content"/>
+        <slot slot="ridelineCardImages">
+            <ImageCollectionWithPopover images={post.data.rideline} category="ridelineCardImages" />
+        </slot>
+        <slot slot="keyCardImages">
+            <ImageCollectionWithPopover images={post.data["key-cards"]} category="keyCardImages" />
+        </slot>
+        <slot slot="genericCardImages">
+            <ImageCollectionWithPopover images={post.data.generics} category="genericCardImages" />
+        </slot>
+        <!--{post.data.rideline.map((card, index) => {-->
+        <!--    const id = `ride-line-${index}`;-->
+        <!--    const selector = `#ride-line-${index}`;-->
+        <!--    const onClick = `document.querySelector("${selector}").togglePopover()`-->
+        <!--    return (-->
+        <!--            <slot slot="ridelineImages">-->
+        <!--                <Image class="s3 vg-card clickable-img auto-height" widths={[200]} src={(typeof card === "object" ? card.src : card) as string} inferSize={true} alt=`Grade ${index} rideline card` onclick={onClick}/>-->
+        <!--                <dialog popover={"auto"} class="center" id={id}>-->
+        <!--                    <img class="vg-card" src={(typeof card === "object" ? card.src : card)} alt={`Grade ${index} rideline card`}/>-->
+        <!--                </dialog>-->
+        <!--            </slot>);-->
+        <!--})}-->
+    </DeckShowcase>
 </Layout>
