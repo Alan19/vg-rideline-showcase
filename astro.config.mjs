@@ -2,7 +2,7 @@
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import { defineConfig } from 'astro/config';
+import {defineConfig, fontProviders} from 'astro/config';
 
 import react from '@astrojs/react';
 
@@ -23,5 +23,19 @@ export default defineConfig({
                 hostname: '**.cf-vanguard.com'
             }
         ]
-    }
+    },
+    fonts: [
+        {
+            provider: fontProviders.fontsource(),
+            name: "Inter",
+            cssVariable: "--font-inter",
+            styles: ["normal"],
+            weights: ["100 900"]
+        },
+        {
+            provider: fontProviders.fontsource(),
+            name: "Audiowide",
+            cssVariable: "--font-audiowide"
+        }
+    ]
 });

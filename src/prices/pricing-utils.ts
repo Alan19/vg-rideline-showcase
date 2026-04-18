@@ -28,7 +28,7 @@ function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardD
     };
 }
 
-type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean,  };
+export type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean,  };
 
 export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undefined {
     let filePath = `src/prices/deck/${deck}.csv`;

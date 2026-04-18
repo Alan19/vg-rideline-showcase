@@ -1,14 +1,28 @@
 ---
-import { Prices } from "../../layouts/Prices.tsx";
 import Layout from "../../layouts/Layout.astro";
 import {GET} from "../api/_cardsDB.json.ts";
-
+import {getCollection} from "astro:content";
+import {getDeckPrices} from "../../prices/pricing-utils.ts";
+import {PricingCard} from "../../layouts/PricingCard.tsx";
+import Image from "astro/components/Image.astro";
 let prices = await GET(Astro)
-const data = await prices.json();
+const cardPrices = await prices.json();
+const decks = (await getCollection('decks'))
+
 ---
 <Layout>
     <main class="responsive">
         <h1>Hello World!</h1>
-        <Prices data={data} />
+        <div class={"grid"}>
+            {decks.map(value => ({...value, pricing: getDeckPrices(value.id.split('/').at(-1) as string, cardPrices)}))
+                .filter(value => value.pricing)
+                .map(value => <PricingCard value={value}>
+                    <slot slot="image">
+                        <!--TODO Cleanup CSS so that image wouldn't expand on smaller screen sizes-->
+                        <Image style={{width: "100%", height: "auto"}} widths={[500]} class="responsive" src={value.data["card-art"]} alt={value.data.title} />
+                    </slot>
+                </PricingCard>)
+            }
+        </div>
     </main>
 </Layout>
