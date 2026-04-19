@@ -10,7 +10,8 @@ export type DeckCard = {
 
 export function getCardPrice(name: string, cardDB: Card[]): number {
     let matchedCards = cardDB.filter(card => card.name === name).map(card => Number(card.lowPrice));
-    return matchedCards.length === 0 ? 0 : Math.min(...matchedCards.filter(Boolean));
+    const lowest = Math.min(...matchedCards.filter(Boolean));
+    return lowest === Number.POSITIVE_INFINITY ? 0 : lowest;
 }
 
 function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardDB: Card[]) {
