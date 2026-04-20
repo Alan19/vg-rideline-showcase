@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import Papa from "papaparse";
-import type {Card} from "./card.ts";
+
 const isDev = import.meta.env.DEV;
 
 export type DeckCard = {
@@ -8,6 +8,20 @@ export type DeckCard = {
     "Quantity": number;
     "Type": "Core" | "Generic"
 };
+
+export type Card = {
+    name: string,
+    cleanName: string,
+    productId: number,
+    groupId: number,
+    url: string,
+    lowPrice: number,
+    midPrice: number,
+    highPrice: number,
+    marketPrice: number
+}
+
+export type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean, };
 
 export function getCardPrice(name: string, cardDB: Card[]): number {
     const regex = new RegExp(name + String.raw`\s?(\(.+\))?$`)
@@ -33,8 +47,6 @@ function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardD
         })
     };
 }
-
-export type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean,  };
 
 // TODO Maybe use endpoints to get decks, or make CSV loader
 export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undefined {

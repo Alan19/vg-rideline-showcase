@@ -1,10 +1,10 @@
 import axios from "axios";
 import Papa from "papaparse";
-import type {Card} from "../../prices/card.ts";
 import fs from "node:fs";
 import {format, isBefore} from "date-fns";
 import {UTCDate} from "@date-fns/utc"
 import type {AstroGlobal} from "astro";
+import type {Card} from "../../prices/pricing-utils.ts";
 
 const isDev = import.meta.env.DEV;
 const userAgent = import.meta.env.USER_AGENT
