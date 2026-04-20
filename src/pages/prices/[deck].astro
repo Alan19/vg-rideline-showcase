@@ -18,6 +18,8 @@ const db: Card[] = await (await GET2(Astro)).json()
 <Layout>
     <main class="responsive">
         <div class="surface">
+            <!--TODO Clean this up-->
+            <h5>{deck} Cost Breakdown</h5>
             <table class="border">
                 <thead>
                 <tr>
@@ -62,6 +64,7 @@ const db: Card[] = await (await GET2(Astro)).json()
                             </tr>);
                 })}
             </table>
+        <!--    TODO Add total-->
         </div>
     </main>
 </Layout>

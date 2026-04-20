@@ -3,6 +3,7 @@ import Papa from "papaparse";
 
 const isDev = import.meta.env.DEV;
 
+//TODO Optimize this function, possibly by having the card DB as a constant?
 export type DeckCard = {
     "Name": string;
     "Quantity": number;
