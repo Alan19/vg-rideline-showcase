@@ -1,39 +1,29 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import {GET} from "../api/_cardsDB.json.ts";
-import {getCollection, render} from "astro:content";
+import {getCollection} from "astro:content";
 import {getDeckPrices} from "../../prices/pricing-utils.ts";
 import {PricingCard} from "../../layouts/PricingCard.tsx";
 import Image from "astro/components/Image.astro";
 let prices = await GET(Astro)
 const cardPrices = await prices.json();
 const decks = (await getCollection('decks'))
-const post = Astro.props;
-const {Content} = await render(post);
+import {Content as Blurb} from './_blurb.md'
+// TODO Add generic / pile warning, add csv rendering
 ---
 <Layout>
     <main class="responsive">
-        <h1>Hello World!</h1>
-        <!--TODO Add text-->
-        <Content slot="content"/>
-        <p>
-            This is a page that documents the pricing of the ridelines that I have pages for. Eventually this would document every rideline and boss unit in the game, but I will likely need volunteers to submit and update decklists as decks get upgrades.
-        </p>
-        <p>
-            Each deck has 3 sections for pricing. Core cards refer to in-archetype cards required for the rideline boss and any of its evolved forms to work. This includes things like Dragontree Wretches, Masque of Hydragrum, and Crimson Moon orders. If the rideline boss or any of its in-archetype cards generate tokens, those will be included in the price of the core cards section as well. Generics include things like cycle cards, Regalis Pieces, and other support cards that are not tied to a specifc boss unit. It is possible for a core card of one deck to be a generic card for another, such as Inlet Pulse Dragon.
-        </p>
-        <p>
-            Decklists are generally extremely subjective, so take these prices with a grain of salt. Also, it is generally possible to reduce a deck's price by decreasing the money spent on generics by replacing them with more budget alternatives, or in archetype options, but it will be much harder to decrease the price of a deck when the core support is expensive.
-        </p>
+        <Blurb/>
         <div class={"grid"}>
             {decks.map(value => ({...value, pricing: getDeckPrices(value.id.split('/').at(-1) as string, cardPrices)}))
-                .filter(value => value.pricing)
-                .map(value => <PricingCard value={value}>
-                    <slot slot="image">
-                        <!--TODO Cleanup CSS so that image wouldn't expand on smaller screen sizes-->
-                        <Image style={{width: "100%"}} widths={[500]} class="responsive" src={value.data["card-art"]} alt={value.data.title} />
-                    </slot>
-                </PricingCard>)
+                .map(value => {
+                    if (value.pricing) {
+                        return (
+                                <PricingCard name={value.data.title} nation={value.data.nation} pricing={value.pricing}>
+                                    <Image style={{minHeight: "100%", minWidth: "100%", objectFit: "cover", objectPosition: "top", "--_size": 0}} widths={[500]} class="responsive" src={value.data["card-art"]} alt={value.data.title}/>
+                                </PricingCard>)
+                    }
+                })
             }
         </div>
     </main>

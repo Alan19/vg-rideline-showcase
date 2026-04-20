@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import Papa from "papaparse";
 import type {Card} from "./card.ts";
+const isDev = import.meta.env.DEV;
 
 export type DeckCard = {
     "Name": string;
@@ -9,8 +10,12 @@ export type DeckCard = {
 };
 
 export function getCardPrice(name: string, cardDB: Card[]): number {
-    let matchedCards = cardDB.filter(card => card.name === name).map(card => Number(card.lowPrice));
-    const lowest = Math.min(...matchedCards.filter(Boolean));
+    const regex = new RegExp(name + String.raw`\s?(\(.+\))?$`)
+    let matchedCards = cardDB.filter(card => new RegExp(regex).exec(card.name)?.at(0));
+    const lowest = Math.min(...matchedCards.map(value => value.lowPrice).filter(Boolean));
+    if (isDev && lowest === Number.POSITIVE_INFINITY) {
+        console.log(`Cannot find price for ${name}`)
+    }
     return lowest === Number.POSITIVE_INFINITY ? 0 : lowest;
 }
 
@@ -31,6 +36,7 @@ function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardD
 
 export type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean,  };
 
+// TODO Maybe use endpoints to get decks, or make CSV loader
 export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undefined {
     let filePath = `src/prices/deck/${deck}.csv`;
     if (fs.existsSync(filePath)) {
@@ -40,9 +46,6 @@ export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undef
         let genericCards = deckCards.filter(card => card.Type === "Generic");
         const genericsPrice = genericCards.map(value => getCardPrice(value.Name, cardDB) * value.Quantity).reduce((sum, current) => sum + current, 0);
         const missingCards = deckCards.some(card => getCardPrice(card.Name, cardDB) === 0);
-        if (missingCards) {
-            console.log(getCostBreakdown(coreCards, genericCards, cardDB))
-        }
         return {
             core: Number(corePrice.toFixed(2)),
             generics: Number(genericsPrice.toFixed(2)),

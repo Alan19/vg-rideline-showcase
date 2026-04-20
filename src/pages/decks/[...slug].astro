@@ -23,14 +23,8 @@ const {Content} = await render(post);
     <DeckShowcase {...post.data}>
         <Image widths={[500]} class="card-art" src={post.data['card-art']} alt={post.data.title} transition:name={`img_${post.data.title}`} slot="card-art"/>
         <Content slot="content"/>
-        <slot slot="ridelineCardImages">
-            <ImageCollectionWithPopover images={post.data.rideline} category="ridelineCardImages" />
-        </slot>
-        <slot slot="keyCardImages">
-            <ImageCollectionWithPopover images={post.data["key-cards"]} category="keyCardImages" />
-        </slot>
-        <slot slot="genericCardImages">
-            <ImageCollectionWithPopover images={post.data.generics} category="genericCardImages" />
-        </slot>
+        <ImageCollectionWithPopover slot="ridelineCardImages" images={post.data.rideline} category="ridelineCardImages"/>
+        <ImageCollectionWithPopover slot="keyCardImages" images={post.data["key-cards"]} category="keyCardImages"/>
+        <ImageCollectionWithPopover slot="genericCardImages" images={post.data.generics} category="genericCardImages"/>
     </DeckShowcase>
 </Layout>

@@ -1,0 +1,9 @@
+# Pricing Guide
+
+This page documents the pricing of the ridelines that I have pages for. Eventually this would document every rideline and boss unit in the game, but I will likely need volunteers to submit and update decklists as decks get upgrades.
+
+Each deck has 3 sections for pricing. Core cards refer to in-archetype cards required for the rideline boss and any of its evolved forms to work. This includes things like Dragontree Wretches, Masque of Hydragrum, and Crimson Moon orders. If the rideline boss or any of its in-archetype cards generate tokens, those will be included in the price of the core cards section as well. Generics include things like cycle cards, Regalis Pieces, and other support cards that are not tied to a specifc boss unit. It is possible for a core card of one deck to be a generic card for another, such as Inlet Pulse Dragon.
+
+Decklists are generally extremely subjective, so take these prices with a grain of salt. It is generally possible to reduce a deck's price by decreasing the money spent on generics by replacing them with more budget alternatives, or in archetype options. However it will be much harder to decrease the price of a deck when the core support is expensive.
+
+If you see a warning sign in the total cost section of a deck, it means that there is no pricing data for at least one card in the deck. This occurs when there are no listings for a card, usually because it is out of stock or because it was released recently.

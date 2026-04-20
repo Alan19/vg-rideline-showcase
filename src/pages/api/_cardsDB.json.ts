@@ -4,6 +4,7 @@ import type {Card} from "../../prices/card.ts";
 import fs from "node:fs";
 import {format, isBefore} from "date-fns";
 import {UTCDate} from "@date-fns/utc"
+import type {AstroGlobal} from "astro";
 
 const isDev = import.meta.env.DEV;
 const userAgent = import.meta.env.USER_AGENT
@@ -113,7 +114,7 @@ async function getCardPriceList() {
         .map(cardInfo_1 => ({name: cardInfo_1.name, cleanName: cardInfo_1.cleanName, productId: cardInfo_1.productId, groupId: cardInfo_1.groupId, url: cardInfo_1.url, lowPrice: cardInfo_1.lowPrice}));
 }
 
-export async function GET() {
+export async function GET(Astro?: AstroGlobal) {
     if (isDev) {
         // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
         const filePath = "src/pages/api/cardsDB.json";

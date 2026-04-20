@@ -26,35 +26,35 @@ function getFlag(nation: Nation) {
     }
 }
 
-export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, ReactNode>) {
+export function DeckShowcase(props: InferEntrySchema<"decks"> & { keyCardImages?: ReactNode, genericCardImages?: ReactNode, cardArt?: ReactNode, ridelineCardImages?: ReactNode, content?: ReactNode }) {
     const {nation} = props
     let flag = getFlag(nation);
+    const {offense, control, keyCardImages, genericCardImages, value: deckValue, cardArt, ridelineCardImages, disadvantages, title, advantages, content} = props;
     return <main className="responsive" style={{overflowY: "scroll"}}>
         <div className="grid" style={{flex: 10}}>
             <div className="s12 m3 l2">
-                {props.cardArt}
+                {cardArt}
             </div>
             <article className="s12 m9 l7">
                 <div style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
-                    <h2 className="primary-text">{props.title}</h2>
+                    <h2 className="primary-text">{title}</h2>
                     {flag && <button className="chip fill round large">
                         <span>{nation}</span>
                         <img className="responsive" style={{objectFit: "contain", background: "white"}} src={flag.src}/>
                     </button>}
 
                 </div>
-                {props.content}
+                {content}
                 <div>
                     <b>Advantages</b>
                     <div style={{width: "100%", lineHeight: 2.5}}>
-                        {props.advantages.map(value =>
-                            <button className="chip no-margin" style={{marginRight: "3px !important"}}>{value}</button>)}
+                        {advantages.map(value => <button key={value} className="chip no-margin" style={{marginRight: "3px !important"}}>{value}</button>)}
                     </div>
                 </div>
                 <div className="top-padding">
                     <b>Disadvantages</b>
                     <div style={{width: "100%", lineHeight: 2.5}}>
-                        {props.disadvantages.map(value => <button className="chip no-margin" style={{marginRight: "3px !important"}}>{value}</button>)}
+                        {disadvantages.map(value => <button key={value} className="chip no-margin" style={{marginRight: "3px !important"}}>{value}</button>)}
                     </div>
                 </div>
             </article>
@@ -83,17 +83,17 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, R
                         </tr>
                         <tr>
                             <td>Offense</td>
-                            <td>{props.offense}</td>
+                            <td>{offense}</td>
                         </tr>
 
                         <tr>
                             <td>Control</td>
-                            <td>{props.control}</td>
+                            <td>{control}</td>
                         </tr>
 
                         <tr>
                             <td>Value</td>
-                            <td>{props.value}</td>
+                            <td>{deckValue}</td>
                         </tr>
                         </thead>
                     </table>
@@ -102,14 +102,13 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, R
                 <div>
                     <h6>Deck Building Notes</h6>
                     <ul style={{paddingLeft: "1rem", marginTop: 0}}>
-                        {props['deck-notes'].map(note =>
-                            <li>{note}</li>)}
+                        {props['deck-notes'].map(note => <li key={note}>{note}</li>)}
                     </ul>
                 </div>
                 <hr/>
                 <div>
                     <h6>Handy Links</h6>
-                    <a href={`https://vg-paradox.com/subpage/DeckInfo/ENG/D/${props.title}Tops`} className="underline">{props.title}on VGParadox</a>
+                    <a href={`https://vg-paradox.com/subpage/DeckInfo/ENG/D/${title}Tops`} className="underline">{title}on VGParadox</a>
                 </div>
             </article>
             <div className="grid m8 s12 l12">
@@ -117,7 +116,7 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, R
                     <div>
                         <b>Ride Line</b>
                         <div className="grid tinier-space">
-                            {props.ridelineCardImages}
+                            {ridelineCardImages}
                         </div>
                     </div>
                 </article>
@@ -125,14 +124,14 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & Record<string, R
                     <div>
                         <b>Key Cards</b>
                         <div className="grid tinier-space">
-                            {props.keyCardImages}
+                            {keyCardImages}
                         </div>
                     </div>
                 </article>
                 <article className="tertiary-container s12 l4">
                     <b>Generic Cards</b>
                     <div className="grid tinier-space">
-                        {props.genericCardImages}
+                        {genericCardImages}
                     </div>
                 </article>
             </div>
