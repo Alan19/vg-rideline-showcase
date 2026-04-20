@@ -1,4 +1,4 @@
-import type {DeckPricing} from "../prices/pricing-utils.ts";
+import type {DeckPricing} from "../pricing.ts";
 import type {Nation} from "../content.config.ts";
 import type {ReactNode} from "react";
 

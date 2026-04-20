@@ -2,7 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import {GET} from "../api/_cardsDB.json.ts";
 import {getCollection} from "astro:content";
-import {getDeckPrices} from "../../prices/pricing-utils.ts";
+import {getDeckPrices} from "../../pricing.ts";
 import {PricingCard} from "../../layouts/PricingCard.tsx";
 import Image from "astro/components/Image.astro";
 let prices = await GET(Astro)

@@ -1,6 +1,11 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, } from 'astro:content';
+import {z} from "astro/zod";
 import { glob } from 'astro/loaders';
 import {url} from "zod/v4";
+import {csvLoader} from "@ascorbic/csv-loader";
+import fs from "node:fs";
+import Papa from "papaparse";
+import type {DeckCard} from "./pricing.ts";
 
 export enum Nation {
     de = "Dragon Empire",
@@ -42,6 +47,5 @@ const decks = defineCollection({
             ['value']: z.number().min(0).max(4),
         }),
 });
-
 
 export const collections = { decks };

@@ -4,7 +4,7 @@ import fs from "node:fs";
 import {format, isBefore} from "date-fns";
 import {UTCDate} from "@date-fns/utc"
 import type {AstroGlobal} from "astro";
-import type {Card} from "../../prices/pricing-utils.ts";
+import type {Card} from "../../pricing.ts";
 
 const isDev = import.meta.env.DEV;
 const userAgent = import.meta.env.USER_AGENT
@@ -118,7 +118,7 @@ export async function GET(Astro?: AstroGlobal) {
     if (isDev) {
         // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
         const filePath = "src/pages/api/cardsDB.json";
-        const mostRecent21GMT = new UTCDate().getHours() < 21 ? (new UTCDate().setUTCHours(23, 0, 0, 0) -  86400000) : new UTCDate().setUTCHours(23, 0, 0, 0)
+        const mostRecent21GMT = new UTCDate().getHours() < 23 ? (new UTCDate().setUTCHours(23, 0, 0, 0) -  86400000) : new UTCDate().setUTCHours(23, 0, 0, 0)
         console.debug(`The most recent 21:00 GMT is`, format(mostRecent21GMT, 'PPpp'))
         const isDbStale = isBefore(fs.statSync(filePath).mtime, mostRecent21GMT);
         if (!fs.existsSync(filePath) || isDbStale) {

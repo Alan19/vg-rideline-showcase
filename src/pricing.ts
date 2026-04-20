@@ -6,7 +6,8 @@ const isDev = import.meta.env.DEV;
 export type DeckCard = {
     "Name": string;
     "Quantity": number;
-    "Type": "Core" | "Generic"
+    "Type": "Core" | "Generic",
+    WhitelistedIDs?: number[]
 };
 
 export type Card = {
@@ -33,6 +34,17 @@ export function getCardPrice(name: string, cardDB: Card[]): number {
     return lowest === Number.POSITIVE_INFINITY ? 0 : lowest;
 }
 
+export function getCheapestListing(name: string, cardDB: Card[]): Card {
+    const regex = new RegExp(name + String.raw`\s?(\(.+\))?$`)
+    let matchedCards = cardDB.filter(card => new RegExp(regex).exec(card.name)?.at(0));
+    const cheapestListing = matchedCards.filter(value => value.lowPrice).reduce((previousValue, currentValue) => currentValue.lowPrice < previousValue.lowPrice ? currentValue : previousValue, matchedCards[0]);
+    if (isDev && !cheapestListing) {
+        console.log(`Cannot find price for ${name}`)
+    }
+    return cheapestListing;
+
+}
+
 function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardDB: Card[]) {
     return {
         core: coreCards.map(card => {
@@ -50,7 +62,7 @@ function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardD
 
 // TODO Maybe use endpoints to get decks, or make CSV loader
 export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undefined {
-    let filePath = `src/prices/deck/${deck}.csv`;
+    let filePath = `src/content/prices/${deck}.csv`;
     if (fs.existsSync(filePath)) {
         let deckCards = Papa.parse<DeckCard>(fs.readFileSync(filePath).toString(), {header: true, dynamicTyping: true, skipEmptyLines: true}).data;
         let coreCards = deckCards.filter(card => card.Type === "Core");
@@ -68,3 +80,4 @@ export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undef
         return undefined;
     }
 }
+
