@@ -61,7 +61,6 @@ function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardD
     };
 }
 
-// TODO Maybe use endpoints to get decks, or make CSV loader
 export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undefined {
     let filePath = `src/content/prices/${deck}.csv`;
     if (fs.existsSync(filePath)) {

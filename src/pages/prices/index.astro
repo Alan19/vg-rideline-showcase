@@ -19,7 +19,7 @@ import {REPO_NAME} from "../../consts.ts";
             {decks.map(value => ({...value, pricing: getDeckPrices(value.id.split('/').at(-1) as string, cardPrices)}))
                 .map(value => {
                     if (value.pricing) {
-                        return (<a href={`prices/${value.id.split('/').at(-1)}`} style="display: contents">
+                        return (<a href={`/${REPO_NAME}/prices/${value.id.split('/').at(-1)}`} style="display: contents">
                             <PricingCard name={value.data.title} nation={value.data.nation} pricing={value.pricing}>
                                 <Image style={{minHeight: "100%", minWidth: "100%", objectFit: "cover", objectPosition: "top", "--_size": 0}} widths={[500]} class="responsive" src={value.data["card-art"]} alt={value.data.title}/>
                             </PricingCard>
