@@ -34,10 +34,10 @@ export function getCardPrice(name: string, cardDB: Card[]): number {
     return lowest === Number.POSITIVE_INFINITY ? 0 : lowest;
 }
 
-export function getCheapestListing(name: string, cardDB: Card[]): Card {
+export function getCheapestListing(name: string, cardDB: Card[]): Card | undefined {
     const regex = new RegExp(name + String.raw`\s?(\(.+\))?$`)
-    let matchedCards = cardDB.filter(card => new RegExp(regex).exec(card.name)?.at(0));
-    const cheapestListing = matchedCards.filter(value => value.lowPrice).reduce((previousValue, currentValue) => currentValue.lowPrice < previousValue.lowPrice ? currentValue : previousValue, matchedCards[0]);
+    let matchedCards = cardDB.filter(card => new RegExp(regex).exec(card.name)?.at(0)).filter(value => value.lowPrice > 0);
+    const cheapestListing = matchedCards.reduce((previousValue, currentValue) => currentValue.lowPrice < previousValue.lowPrice ? currentValue : previousValue, matchedCards.at(0));
     if (isDev && !cheapestListing) {
         console.log(`Cannot find price for ${name}`)
     }

@@ -124,7 +124,7 @@ export async function GET(Astro?: AstroGlobal) {
         if (!fs.existsSync(filePath) || isDbStale) {
             const value = await getCardPriceList();
             console.log("Updating card DB!")
-            fs.writeFileSync(filePath, JSON.stringify(value))
+            fs.writeFileSync(filePath, JSON.stringify(value, null, 1))
         }
         return new Response(fs.readFileSync(filePath).toString(), {status: 200,});
     } else {

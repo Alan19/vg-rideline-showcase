@@ -36,12 +36,13 @@ const db: Card[] = await (await GET2(Astro)).json()
                 </tr>
                 {cards.filter(value => value.Type === "Core").map(value => {
                     const cost = getCheapestListing(value.Name, db)
+                    // TODO Handle null situation
                     return (
                             <tr>
                                 <td><a href={cost.url} target="_blank" rel="noopener noreferrer">{value.Name}</a></td>
-                                <td class="right-align">${cost.lowPrice.toFixed(2)}</td>
+                                <td class="right-align">${cost?.lowPrice && cost.lowPrice.toFixed(2)}</td>
                                 <td class="right-align">{value.Quantity}</td>
-                                <td class="right-align">${(cost.lowPrice * value.Quantity).toFixed(2)}</td>
+                                <td class="right-align">${(cost?.lowPrice * value.Quantity).toFixed(2)}</td>
                             </tr>);
                 })}
                 <tr class="secondary-container">
@@ -55,9 +56,9 @@ const db: Card[] = await (await GET2(Astro)).json()
                     return (
                             <tr>
                                 <td><a href={cost.url} target="_blank" rel="noopener noreferrer">{value.Name}</a></td>
-                                <td class="right-align">${cost.lowPrice.toFixed(2)}</td>
+                                <td class="right-align">${cost?.lowPrice && cost.lowPrice.toFixed(2)}</td>
                                 <td class="right-align">{value.Quantity}</td>
-                                <td class="right-align">${(cost.lowPrice * value.Quantity).toFixed(2)}</td>
+                                <td class="right-align">${(cost?.lowPrice * value.Quantity).toFixed(2)}</td>
                             </tr>);
                 })}
             </table>
