@@ -9,6 +9,7 @@ let prices = await GET(Astro)
 const cardPrices = await prices.json();
 const decks = (await getCollection('decks'))
 import {Content as Blurb} from './_blurb.md'
+import {REPO_NAME} from "../../consts.ts";
 // TODO Add generic / pile warning
 ---
 <Layout>
@@ -18,10 +19,11 @@ import {Content as Blurb} from './_blurb.md'
             {decks.map(value => ({...value, pricing: getDeckPrices(value.id.split('/').at(-1) as string, cardPrices)}))
                 .map(value => {
                     if (value.pricing) {
-                        return (
-                                <PricingCard name={value.data.title} nation={value.data.nation} pricing={value.pricing}>
-                                    <Image style={{minHeight: "100%", minWidth: "100%", objectFit: "cover", objectPosition: "top", "--_size": 0}} widths={[500]} class="responsive" src={value.data["card-art"]} alt={value.data.title}/>
-                                </PricingCard>)
+                        return (<a href={`prices/${value.id.split('/').at(-1)}`} style="display: contents">
+                            <PricingCard name={value.data.title} nation={value.data.nation} pricing={value.pricing}>
+                                <Image style={{minHeight: "100%", minWidth: "100%", objectFit: "cover", objectPosition: "top", "--_size": 0}} widths={[500]} class="responsive" src={value.data["card-art"]} alt={value.data.title}/>
+                            </PricingCard>
+                        </a>)
                     }
                 })
             }
