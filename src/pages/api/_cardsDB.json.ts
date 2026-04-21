@@ -2,7 +2,6 @@ import axios from "axios";
 import Papa from "papaparse";
 import fs from "node:fs";
 import {format, isBefore} from "date-fns";
-import {UTCDate} from "@date-fns/utc"
 import type {AstroGlobal} from "astro";
 import type {Card} from "../../pricing.ts";
 
@@ -103,8 +102,8 @@ const dProductIDList = [
 ]
 
 async function parseVanguardSet(set: string) {
-    const value = await axios.get(set, {headers: {"User-Agent": userAgent}});
-    return Papa.parse<unknown & Card>(value.data, {header: true, dynamicTyping: true, skipEmptyLines: true}).data
+    const value = await axios.get(set, {headers: {"User-Agent": userAgent}}).catch(reason => console.log(`Failed to get data for ${set}: ${reason}`));
+    return Papa.parse<unknown & Card>(value?.data, {header: true, dynamicTyping: true, skipEmptyLines: true}).data
 }
 
 async function getCardPriceList() {
@@ -118,10 +117,9 @@ export async function GET(Astro?: AstroGlobal) {
     if (isDev) {
         // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
         const filePath = "src/pages/api/cardsDB.json";
-        const mostRecent21GMT = new UTCDate().getHours() < 23 ? (new UTCDate().setUTCHours(23, 0, 0, 0) -  86400000) : new UTCDate().setUTCHours(23, 0, 0, 0)
-        console.debug(`The most recent 21:00 GMT is`, format(mostRecent21GMT, 'PPpp'))
-        const isDbStale = isBefore(fs.statSync(filePath).mtime, mostRecent21GMT);
-        if (!fs.existsSync(filePath) || isDbStale) {
+        const lastUpdated = new Date((await axios.get('https://tcgcsv.com/last-updated.txt', {headers: {"User-Agent": userAgent}})).data)
+        console.debug(`The most recent update was`, format(lastUpdated, 'PPpp'))
+        if (!fs.existsSync(filePath) || isBefore(fs.statSync(filePath).mtime, lastUpdated)) {
             const value = await getCardPriceList();
             console.log("Updating card DB!")
             fs.writeFileSync(filePath, JSON.stringify(value, null, 1))
