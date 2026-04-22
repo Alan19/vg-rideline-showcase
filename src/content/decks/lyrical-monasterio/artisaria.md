@@ -3,9 +3,9 @@ title: Artisaria
 nation: Lyrical Monasterio
 card-art: '../../../assets/Artisaria.png'
 rideline: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_085.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_083.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt02/dzbt02_079.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt07/dzbt07_149.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt07/dzbt07_147.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt07/dzbt07_145.png",
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt07/dzbt07_016.png"
 ]
 key-cards: [
@@ -15,10 +15,10 @@ key-cards: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt07/dzbt07_095.png"
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_Re49.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt07/dzbt07_017.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dss07/dss07_023.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzlbt02/dzlbt02_019.png",
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_006.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzlbt01/dzlbt01_013.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dlbt04/dlbt04_015.png"
 ]
 advantages:
   - 4 Attacks
