@@ -3,9 +3,10 @@ import {type CollectionEntry, getCollection, render} from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import fs from "node:fs";
 import {GET} from "../api/[deck].json.ts";
-import {GET as GET2} from "../api/_cardsDB.json.ts";
+// TODO Rename this
+import {GET as GET2} from "../api/_db.json.ts";
 import type {GetStaticPaths, Params} from "astro";
-import {type Card, type DeckCard, getCardPrice, getCheapestListing} from "../../pricing.ts";
+import {type Card, type DeckCard, getCheapestListing} from "../../pricing.ts";
 
 export const getStaticPaths = async () => fs.readdirSync('src/content/prices').filter(value => value.split('.').at(-1) === 'csv').map(value => ({params: {deck: value.split('.').at(0)}})) satisfies GetStaticPaths;
 

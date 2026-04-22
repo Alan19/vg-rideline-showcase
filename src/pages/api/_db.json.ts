@@ -5,7 +5,7 @@ import {format, isBefore} from "date-fns";
 import type {AstroGlobal} from "astro";
 import type {Card} from "../../pricing.ts";
 
-const isDev = import.meta.env.DEV;
+const mode = import.meta.env.MODE;
 const userAgent = import.meta.env.USER_AGENT
 
 const dProductIDList = [
@@ -113,19 +113,15 @@ async function getCardPriceList() {
         .map(cardInfo_1 => ({name: cardInfo_1.name, cleanName: cardInfo_1.cleanName, productId: cardInfo_1.productId, groupId: cardInfo_1.groupId, url: cardInfo_1.url, lowPrice: cardInfo_1.lowPrice}));
 }
 
-export async function GET(Astro?: AstroGlobal) {
-    if (isDev) {
-        // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
-        const filePath = "src/pages/api/cardsDB.json";
-        const lastUpdated = new Date((await axios.get('https://tcgcsv.com/last-updated.txt', {headers: {"User-Agent": userAgent}})).data)
-        console.debug(`The most recent update was`, format(lastUpdated, 'PPpp'))
-        if (!fs.existsSync(filePath) || isBefore(fs.statSync(filePath).mtime, lastUpdated)) {
-            const value = await getCardPriceList();
-            console.log("Updating card DB!")
-            fs.writeFileSync(filePath, JSON.stringify(value, null, 1))
-        }
-        return new Response(fs.readFileSync(filePath).toString(), {status: 200,});
-    } else {
-        return new Response(JSON.stringify(await getCardPriceList()), {status: 200,});
+export async function GET({ params, request }) {
+    // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
+    const filePath = "node_modules/.astro/db.json";
+    const lastUpdated = new Date((await axios.get('https://tcgcsv.com/last-updated.txt', {headers: {"User-Agent": userAgent}})).data)
+    console.log(`The most recent update was`, format(lastUpdated, 'PPpp'))
+    if (!fs.existsSync(filePath) || isBefore(fs.statSync(filePath).mtime, lastUpdated)) {
+        const value = await getCardPriceList();
+        console.log("Updating card DB!")
+        fs.writeFileSync(filePath, JSON.stringify(value, null, 1))
     }
+    return new Response(fs.readFileSync(filePath).toString(), {status: 200,});
 }
