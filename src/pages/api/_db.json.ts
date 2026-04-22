@@ -123,5 +123,8 @@ export async function GET({ params, request }) {
         console.log("Updating card DB!")
         fs.writeFileSync(filePath, JSON.stringify(value, null, 1))
     }
+    else {
+        console.log("Using cached version of card DB!")
+    }
     return new Response(fs.readFileSync(filePath).toString(), {status: 200,});
 }
