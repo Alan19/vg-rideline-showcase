@@ -21,21 +21,19 @@ generics: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dlbt04/dlbt04_015.png"
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - Real Lock
+  - Shadow Army tokens help build board
+  - 4-5 attacks
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
   - Lackluster early game
+  - Needs turn 4 to do 5 attacks
 deck-notes: 
-  - Prefer shield front triggers (Diabolos Girls, Natalia)
-  - Prefers Radiance Caliburn as Regalis Piece
-core-cost: 3
+  - Prefer shield front triggers (Snowskip, Palvi)
+  - Prefers Gratias Gradale as Regalis Piece
+core-cost: 1
 generics-cost: 2
-offense: 3
+offense: 2
 control: 2
 value: 2
 ---
-Use your rideline and cards like "Steam Raider Zamuug" or "Veidrock Dragon" to put cards in soul, and bind them face down with Blangdmire, "Elaborate Wizard", or "Single Strike Shatter Colossus" so Blangdmire can give himself more power by binding 4 cards from your soul face down while binding your opponent's rear-guards! "Elaborate Wizard" and "One Who Walks From Zero, Blangdmire Nexus" can use your bind zone as a toolbox to strengthen your board and hand. Choose the right time to unleash your Divine Skill to finish off your opponent by disabling your opponent's skills and all Sentinels when Blangdmire attacks for the rest of the turn while he gains an extra critical and at least 20000 power!
+Use Artisaria's skill to set your Sound Systems to call Shadow Army tokens or lock your opponent's rear-guards! Your units can take advantage of your Shadow Army tokens to gain various benefits, such as gaining extra shield, calling more Shadow Army tokens, or returning your rear-guards to your hand!
