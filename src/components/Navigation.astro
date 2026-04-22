@@ -3,9 +3,9 @@ import {REPO_NAME} from "../consts.ts";
 import {ModeToggle} from "./ModeToggle.tsx";
 const currentPath = Astro.url.pathname.split('/').at(2);
 ---
-<header class="primary-container">
+<header class="surface-container">
     <nav>
-        <h6 class="max"><a href={`/${REPO_NAME}`}> VG Ridelines</a></h6>
+        <h6 class="max primary-text"><a href={`/${REPO_NAME}`}> VG Ridelines</a></h6>
         <a href={`/${REPO_NAME}/decks`}>
             <button class={currentPath === 'decks' ? 'primary' : 'border'}>
                 <i>playing_cards</i>

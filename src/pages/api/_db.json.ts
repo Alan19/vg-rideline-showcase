@@ -2,10 +2,7 @@ import axios from "axios";
 import Papa from "papaparse";
 import fs from "node:fs";
 import {format, isBefore} from "date-fns";
-import type {AstroGlobal} from "astro";
 import type {Card} from "../../pricing.ts";
-
-const mode = import.meta.env.MODE;
 const userAgent = import.meta.env.USER_AGENT
 
 const dProductIDList = [
@@ -113,6 +110,7 @@ async function getCardPriceList() {
         .map(cardInfo_1 => ({name: cardInfo_1.name, cleanName: cardInfo_1.cleanName, productId: cardInfo_1.productId, groupId: cardInfo_1.groupId, url: cardInfo_1.url, lowPrice: cardInfo_1.lowPrice}));
 }
 
+// @ts-ignore
 export async function GET({ params, request }) {
     // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
     const filePath = "node_modules/.astro/db.json";

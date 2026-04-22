@@ -37,8 +37,8 @@ export function ModeToggle() {
 
     return (
         <div>
-            <button className="circle transparent" onClick={() => nextMode()}>
-                <i id="mode-element">{getModeIcon()}</i>
+            <button className="circle transparent border primary-text" onClick={() => nextMode()}>
+                <i id="mode-element" className={"small"}>{getModeIcon()}</i>
             </button>
         </div>
     )
