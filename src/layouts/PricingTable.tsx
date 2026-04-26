@@ -13,7 +13,7 @@ function CardPricingRow(props: Readonly<{ cardPricingEntry: DeckCardPricing }>) 
         <td><a className={"link"} href={url} target="_blank" rel="noopener noreferrer">{name}</a></td>
         <td className="right-align">${lowPrice?.toFixed(2)}</td>
         <td className="right-align">{quantity}</td>
-        <td className="right-align">{lowPrice ? (lowPrice * quantity).toFixed(2) : <i>warning</i>}</td>
+        <td className="right-align">{lowPrice ? `$${(lowPrice * quantity).toFixed(2)}` : <i>warning</i>}</td>
     </tr>;
 }
 
