@@ -1,9 +1,7 @@
 import fs from "node:fs";
 import Papa from "papaparse";
+import {cardDB} from "./pages/api/_db.json.ts";
 
-const isDev = import.meta.env.DEV;
-
-//TODO Optimize this function, possibly by having the card DB as a constant?
 export type DeckCard = {
     "Name": string;
     "Quantity": number;
@@ -17,67 +15,58 @@ export type Card = {
     productId: number,
     groupId: number,
     url: string,
-    lowPrice: number,
-    midPrice: number,
-    highPrice: number,
-    marketPrice: number
+    lowPrice?: number,
 }
 
 export type DeckPricing = { core: number, generics: number, total: number, missingCards: boolean, };
 
-export function getCardPrice(name: string, cardDB: Card[]): number {
+async function getMatchingCards(name: string) {
     const regex = new RegExp(name + String.raw`\s?(\(.+\))?$`)
-    let matchedCards = cardDB.filter(card => new RegExp(regex).exec(card.name)?.at(0));
-    const lowest = Math.min(...matchedCards.map(value => value.lowPrice).filter(Boolean));
-    if (isDev && lowest === Number.POSITIVE_INFINITY) {
-        console.log(`Cannot find price for ${name}`)
+    return (await cardDB).filter(card => new RegExp(regex).exec(card.name));
+}
+
+export async function getCheapestListing(name: string): Promise<Card> {
+    const value = await getMatchingCards(name);
+    const cards: (Card & { lowPrice: number; })[] = value.filter(card => card.lowPrice) as (Card & { lowPrice: number; })[];
+    if (cards.length) {
+        return cards.reduce((previousValue, currentValue) => currentValue.lowPrice < previousValue.lowPrice ? currentValue : previousValue, cards[0]);
+    } else {
+        throw new Error(`No listings found for this ${name}!`);
     }
-    return lowest === Number.POSITIVE_INFINITY ? 0 : lowest;
 }
 
-export function getCheapestListing(name: string, cardDB: Card[]): Card | undefined {
-    const regex = new RegExp(name + String.raw`\s?(\(.+\))?$`)
-    let matchedCards = cardDB.filter(card => new RegExp(regex).exec(card.name)?.at(0)).filter(value => value.lowPrice > 0);
-    const cheapestListing = matchedCards.reduce((previousValue, currentValue) => currentValue.lowPrice < previousValue.lowPrice ? currentValue : previousValue, matchedCards.at(0));
-    if (isDev && !cheapestListing) {
-        console.log(`Cannot find price for ${name}`)
-    }
-    return cheapestListing;
+type DecklistCardPriceEntry = Card & { lowPrice: number } & DeckCard;
 
+function isDbCard(card: DecklistCardPriceEntry | DeckCard): card is DecklistCardPriceEntry {
+    return "url" in card;
 }
 
-function getCostBreakdown(coreCards: DeckCard[], genericCards: DeckCard[], cardDB: Card[]) {
-    return {
-        core: coreCards.map(card => {
-            let cardPrice = getCardPrice(card.Name, cardDB);
-            const {Name, Quantity} = card;
-            return {name: Name, price: cardPrice, quantity: Quantity, total: cardPrice * Quantity};
-        }),
-        generics: genericCards.map(card => {
-            let cardPrice = getCardPrice(card.Name, cardDB);
-            const {Name, Quantity} = card;
-            return {name: Name, price: cardPrice, quantity: Quantity, total: cardPrice * Quantity};
-        })
-    };
-}
-
-export function getDeckPrices(deck: string, cardDB: Card[]): DeckPricing | undefined {
+export async function getDeckPricing(deck: string): Promise<DeckPricing> {
     let filePath = `src/content/prices/${deck}.csv`;
     if (fs.existsSync(filePath)) {
-        let deckCards = Papa.parse<DeckCard>(fs.readFileSync(filePath).toString(), {header: true, dynamicTyping: true, skipEmptyLines: true}).data;
-        let coreCards = deckCards.filter(card => card.Type === "Core");
-        let corePrice = coreCards.map(value => getCardPrice(value.Name, cardDB) * value.Quantity).reduce((sum, current) => sum + current, 0);
-        let genericCards = deckCards.filter(card => card.Type === "Generic");
-        const genericsPrice = genericCards.map(value => getCardPrice(value.Name, cardDB) * value.Quantity).reduce((sum, current) => sum + current, 0);
-        const missingCards = deckCards.some(card => getCardPrice(card.Name, cardDB) === 0);
+        const deckCards = Papa.parse<DeckCard>(fs.readFileSync(filePath).toString(), {header: true, dynamicTyping: true, skipEmptyLines: true}).data;
+        const retrievedCards = await (Promise.all(deckCards.map(value => getCheapestListing(value.Name).then(listing => ({...listing, ...value})).catch(() => value))))
+        let corePrice = retrievedCards.filter(card => card.Type === "Core")
+            .filter(value => isDbCard(value))
+            .map(value => value.lowPrice * value.Quantity)
+            .reduce((sum, current) => sum + current, 0);
+        const genericsPrice = retrievedCards.filter(card => card.Type === "Generic")
+            .filter(value => isDbCard(value))
+            .map(value => value.lowPrice * value.Quantity)
+            .reduce((sum, current) => sum + current, 0);
         return {
             core: Number(corePrice.toFixed(2)),
             generics: Number(genericsPrice.toFixed(2)),
             total: Number((corePrice + genericsPrice).toFixed(2)),
-            missingCards: missingCards,
+            missingCards: retrievedCards.some(value => !isDbCard(value)),
         };
     } else {
-        return undefined;
+        throw new Error(`Cannot find src/content/prices/${deck}.csv`)
     }
 }
 
+export async function getCardListPricing(cards: DeckCard[]): Promise<{ name: string, url?: string, lowPrice?: number, quantity: number }[]> {
+    return Promise.all(cards.map(value => getCheapestListing(value.Name)
+        .then(listing => ({name: value.Name, url: listing.url, lowPrice: listing.lowPrice, quantity: value.Quantity}))
+        .catch(() => ({name: value.Name, quantity: value.Quantity}))))
+}

@@ -1,32 +1,29 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import {GET} from "../api/_db.json.ts";
 import {getCollection} from "astro:content";
-import {getDeckPrices} from "../../pricing.ts";
+import {getDeckPricing} from "../../pricing.ts";
 import {PricingCard} from "../../layouts/PricingCard.tsx";
 import Image from "astro/components/Image.astro";
-let prices = await GET(Astro)
-const cardPrices = await prices.json();
-const decks = (await getCollection('decks'))
 import {Content as Blurb} from './_blurb.md'
 import {REPO_NAME} from "../../consts.ts";
+
+const decks = await getCollection('decks')
+    .then(deckCollection => Promise.allSettled(deckCollection.map(async value => ({pricing: await getDeckPricing(value.id), data: value}))))
+    .then(value => value.filter(promise => promise.status === "fulfilled").map(promise => promise.value))
 // TODO Add generic / pile warning
 ---
 <Layout>
     <main class="responsive">
         <Blurb/>
         <div class={"grid"}>
-            {decks.map(value => ({...value, pricing: getDeckPrices(value.id.split('/').at(-1) as string, cardPrices)}))
-                .map(value => {
-                    if (value.pricing) {
-                        return (<a href={`/${REPO_NAME}/prices/${value.id.split('/').at(-1)}`} style="display: contents">
-                            <PricingCard name={value.data.title} nation={value.data.nation} pricing={value.pricing}>
-                                <Image style={{minHeight: "100%", minWidth: "100%", objectFit: "cover", objectPosition: "top", "--_size": 0}} widths={[500]} class="responsive" src={value.data["card-art"]} alt={value.data.title}/>
-                            </PricingCard>
-                        </a>)
-                    }
-                })
-            }
+            {decks.map(value => {
+                const deckName = value.data.id
+                return (<a href={`/${REPO_NAME}/decks/${deckName}/pricing`} style="display: contents">
+                    <PricingCard name={value.data.data.title} nation={value.data.data.nation} pricing={value.pricing}>
+                        <Image style={{minHeight: "100%", minWidth: "100%", objectFit: "cover", objectPosition: "top", "--_size": 0}} widths={[500]} transition:name={`img_${value.data.data.title}`} class="responsive" src={value.data.data["card-art"]} alt={value.data.data.title}/>
+                    </PricingCard>
+                </a>)
+            })}
         </div>
     </main>
 </Layout>

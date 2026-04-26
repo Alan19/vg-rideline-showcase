@@ -1,0 +1,39 @@
+---
+import {type CollectionEntry, getCollection} from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import {GET} from "../../api/_[deck].json.ts";
+import {type DeckCard, getCardListPricing,} from "../../../pricing.ts";
+import {PricingTable} from "../../../layouts/PricingTable.tsx";
+import {ThemeSwitcher} from "../../../components/ThemeSwitcher.tsx";
+import Image from "astro/components/Image.astro";
+export async function getStaticPaths() {
+    const posts = await getCollection('decks');
+    return posts.map(post => ({
+        params: {slug: post.id},
+        props: post,
+    }));
+}
+import './pricing.css'
+type Props = CollectionEntry<'decks'>;
+
+const post = Astro.props;
+const content = GET(Astro)
+const deckList: DeckCard[] = await content.json();
+const corePricing = getCardListPricing(deckList.filter(value => value.Type === "Core"));
+const genericPricing = getCardListPricing(deckList.filter(value => value.Type === "Generic"))
+const isCardInfoMissing = Promise.all([corePricing, genericPricing])
+    .then(([core, generics]) => core.concat(generics).some(value => !value.lowPrice))
+const [corePrices, genericPrices] = await Promise.all([corePricing, genericPricing])
+---
+<Layout title={post.data.title + " - Pricing"}>
+    <ThemeSwitcher client:only="react" nation={post.data.nation}/>
+    <!--Using bootleg main component to make sticky work-->
+    <div class="grid responsive" style="max-inline-size: min(100vw, 75rem);  margin: 0 auto; padding: .5rem">
+        <div class="l3 m2 s12 sticky-image">
+            <Image widths={[500]} class="card-art" src={post.data['card-art']} alt={post.data.title} transition:name={`img_${post.data.title}`} slot="card-art"/>
+        </div>
+        <div class="l9 m10 s12">
+            <PricingTable genericPrices={genericPrices} corePrices={corePrices} title={post.data.title}/>
+        </div>
+    </div>
+</Layout>

@@ -3,7 +3,7 @@ import {REPO_NAME} from "../consts.ts";
 import {ModeToggle} from "./ModeToggle.tsx";
 const currentPath = Astro.url.pathname.split('/').at(2);
 ---
-<header class="surface-container">
+<header class="surface-container" style="z-index: 99999; position: sticky; top: 0">
     <nav>
         <h6 class="max primary-text"><a href={`/${REPO_NAME}`}> VG Ridelines</a></h6>
         <a href={`/${REPO_NAME}/decks`}>
@@ -13,7 +13,7 @@ const currentPath = Astro.url.pathname.split('/').at(2);
             </button>
         </a>
         <a href={`/${REPO_NAME}/prices`}>
-            <button class={currentPath === 'prices' ? 'primary' : 'border'}>
+            <button class={currentPath === '[deck]-pricing' ? 'primary' : 'border'}>
                 <i>price_check</i>
                 Prices
             </button>

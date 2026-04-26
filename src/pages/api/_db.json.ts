@@ -1,8 +1,9 @@
 import axios from "axios";
 import Papa from "papaparse";
 import fs from "node:fs";
-import {format, isBefore} from "date-fns";
+import {isBefore} from "date-fns";
 import type {Card} from "../../pricing.ts";
+
 const userAgent = import.meta.env.USER_AGENT
 
 const dProductIDList = [
@@ -98,6 +99,25 @@ const dProductIDList = [
     24592
 ]
 
+export const cardDB: Promise<Card[]> = new Promise((resolve) => {
+    // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
+    const filePath = "node_modules/.astro/db.json";
+    resolve(axios.get('https://tcgcsv.com/last-updated.txt', {headers: {"User-Agent": userAgent}})
+        .then(value => new Date(value.data))
+        .then(lastUpdated => {
+            if (!fs.existsSync(filePath) || isBefore(fs.statSync(filePath).mtime, lastUpdated)) {
+                console.log("Updating card DB!")
+                return getCardPriceList().then(db => {
+                    fs.writeFileSync(filePath, JSON.stringify(db, null, 1))
+                    return db;
+                });
+            } else {
+                console.debug("Using cached DB")
+                return JSON.parse(fs.readFileSync(filePath).toString()) as Card[]
+            }
+        }))
+})
+
 async function parseVanguardSet(set: string) {
     const value = await axios.get(set, {headers: {"User-Agent": userAgent}}).catch(reason => console.log(`Failed to get data for ${set}: ${reason}`));
     return Papa.parse<unknown & Card>(value?.data, {header: true, dynamicTyping: true, skipEmptyLines: true}).data
@@ -111,18 +131,7 @@ async function getCardPriceList() {
 }
 
 // @ts-ignore
-export async function GET({ params, request }) {
-    // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
-    const filePath = "node_modules/.astro/db.json";
-    const lastUpdated = new Date((await axios.get('https://tcgcsv.com/last-updated.txt', {headers: {"User-Agent": userAgent}})).data)
-    console.log(`The most recent update was`, format(lastUpdated, 'PPpp'))
-    if (!fs.existsSync(filePath) || isBefore(fs.statSync(filePath).mtime, lastUpdated)) {
-        const value = await getCardPriceList();
-        console.log("Updating card DB!")
-        fs.writeFileSync(filePath, JSON.stringify(value, null, 1))
-    }
-    else {
-        console.log("Using cached version of card DB!")
-    }
-    return new Response(fs.readFileSync(filePath).toString(), {status: 200,});
+export async function GET({params, request}) {
+    const cards = await cardDB;
+    return new Response(JSON.stringify(cards), {status: 200});
 }
