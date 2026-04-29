@@ -1,15 +1,14 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import {getCollection} from "astro:content";
-import {getDeckPricing} from "../../pricing.ts";
+import {pricingGuide} from "../../pricing.ts";
 import {PricingCard} from "../../layouts/PricingCard.tsx";
 import Image from "astro/components/Image.astro";
-import {Content as Blurb} from './_blurb.md'
+import {Content as Blurb} from './_blurb.mdx'
 import {REPO_NAME} from "../../consts.ts";
 
-const decks = await getCollection('decks')
-    .then(deckCollection => Promise.allSettled(deckCollection.map(async value => ({pricing: await getDeckPricing(value.id), data: value}))))
-    .then(value => value.filter(promise => promise.status === "fulfilled").map(promise => promise.value))
+const decks = await getCollection('decks').then(deckCollection => deckCollection.map(value => ({id: value.id, title: value.data.title, nation: value.data.nation, pricing: pricingGuide[value.id], artwork: value.data["card-art"]}))
+        .filter(value => value.pricing))
 // TODO Add generic / pile warning
 ---
 <Layout>
@@ -17,10 +16,10 @@ const decks = await getCollection('decks')
         <Blurb/>
         <div class={"grid"}>
             {decks.map(value => {
-                const deckName = value.data.id
+                const deckName = value.id
                 return (<a href={`/${REPO_NAME}/decks/${deckName}/pricing`} style="display: contents">
-                    <PricingCard name={value.data.data.title} nation={value.data.data.nation} pricing={value.pricing}>
-                        <Image style={{minHeight: "100%", minWidth: "100%", objectFit: "cover", objectPosition: "top", "--_size": 0}} widths={[500]} transition:name={`img_${value.data.data.title}`} class="responsive" src={value.data.data["card-art"]} alt={value.data.data.title}/>
+                    <PricingCard name={value.title} nation={value.nation} pricing={value.pricing}>
+                        <Image style={{minHeight: "100%", minWidth: "100%", objectFit: "cover", objectPosition: "top", "--_size": 0}} widths={[500]} transition:name={`img_${value.title}`} class="responsive" src={value.artwork} alt={value.title}/>
                     </PricingCard>
                 </a>)
             })}

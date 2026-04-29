@@ -2,7 +2,8 @@ import axios from "axios";
 import Papa from "papaparse";
 import fs from "node:fs";
 import {isBefore} from "date-fns";
-import type {Card} from "../../pricing.ts";
+
+import type {CardDatabaseEntry} from "../../types.ts";
 
 const userAgent = import.meta.env.USER_AGENT
 
@@ -99,7 +100,7 @@ const dProductIDList = [
     24592
 ]
 
-export const cardDB: Promise<Card[]> = new Promise((resolve) => {
+export const cardDB: Promise<CardDatabaseEntry[]> = new Promise((resolve) => {
     // If card DB is blank, or it has been 24 hours since last update, update the cardDB and lastUpdated atoms and print log message, otherwise, return the existing atom values
     const filePath = "node_modules/.astro/db.json";
     resolve(axios.get('https://tcgcsv.com/last-updated.txt', {headers: {"User-Agent": userAgent}})
@@ -113,14 +114,14 @@ export const cardDB: Promise<Card[]> = new Promise((resolve) => {
                 });
             } else {
                 console.debug("Using cached DB")
-                return JSON.parse(fs.readFileSync(filePath).toString()) as Card[]
+                return JSON.parse(fs.readFileSync(filePath).toString()) as CardDatabaseEntry[]
             }
         }))
 })
 
 async function parseVanguardSet(set: string) {
     const value = await axios.get(set, {headers: {"User-Agent": userAgent}}).catch(reason => console.log(`Failed to get data for ${set}: ${reason}`));
-    return Papa.parse<unknown & Card>(value?.data, {header: true, dynamicTyping: true, skipEmptyLines: true}).data
+    return Papa.parse<unknown & CardDatabaseEntry>(value?.data, {header: true, dynamicTyping: true, skipEmptyLines: true}).data
 }
 
 async function getCardPriceList() {

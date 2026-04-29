@@ -1,28 +1,19 @@
-import _ from "lodash"
-
-type DeckCardPricing = {
-    name: string
-    url?: string
-    lowPrice?: number
-    quantity: number
-};
+import {getPricingNumbers} from "../pricing.ts";
+import type {DeckCardPricing, DeckPricing} from "../types.ts";
 
 function CardPricingRow(props: Readonly<{ cardPricingEntry: DeckCardPricing }>) {
     const {lowPrice, name, url, quantity} = props.cardPricingEntry;
     return <tr>
         <td><a className={"link"} href={url} target="_blank" rel="noopener noreferrer">{name}</a></td>
-        <td className="right-align">${lowPrice?.toFixed(2)}</td>
+        <td className="right-align">{lowPrice ? `$${(lowPrice).toFixed(2)}` : <i>warning</i>}</td>
         <td className="right-align">{quantity}</td>
         <td className="right-align">{lowPrice ? `$${(lowPrice * quantity).toFixed(2)}` : <i>warning</i>}</td>
     </tr>;
 }
 
-export function PricingTable(props: Readonly<{ corePrices: DeckCardPricing[], genericPrices: DeckCardPricing[], title: string }>) {
-    const {title, corePrices, genericPrices} = props;
-    const coreCardCosts = _.sum(corePrices.map(value => value.lowPrice ? value.lowPrice * value.quantity : 0));
-    const genericCardCosts = _.sum(genericPrices.map(value => value.lowPrice ? value.lowPrice * value.quantity : 0));
-    const coreCardCount = _.sum(corePrices.map(value => value.quantity));
-    const genericCardCount = _.sum(genericPrices.map(value => value.quantity));
+export function PricingTable(props: Readonly<{ deckPricing: DeckPricing, title: string }>) {
+    const {title, deckPricing} = props;
+    const {coreCardCosts, genericCardCosts, coreCardCount, genericCardCount} = getPricingNumbers(deckPricing);
     return <div className="surface">
         <h5 className={"secondary-text"}>{title} Cost Breakdown</h5>
         <table className="border">
@@ -41,26 +32,28 @@ export function PricingTable(props: Readonly<{ corePrices: DeckCardPricing[], ge
                 <th></th>
                 <th></th>
             </tr>
-            {corePrices.map(value => <CardPricingRow key={value.name} cardPricingEntry={value}/>)}
+            {deckPricing.core.map(value => <CardPricingRow key={value.name} cardPricingEntry={value}/>)}
             <tr>
                 <th scope={"row"}>Core Cards Total</th>
                 <th></th>
                 <th className={"right-align"}>{coreCardCount}</th>
                 <th className={"right-align"}>${coreCardCosts.toFixed(2)}</th>
             </tr>
-            <tr className="primary-container">
-                <th>Generic Cards</th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            {genericPrices.map(value => <CardPricingRow key={value.name} cardPricingEntry={value}/>)}
-            <tr>
-                <th scope={"row"}>Generic Cards Total</th>
-                <th></th>
-                <th className={"right-align"}>{genericCardCount}</th>
-                <th className={"right-align"}>${genericCardCosts.toFixed(2)}</th>
-            </tr>
+            {!!(deckPricing.generics.length) && <>
+                <tr className="primary-container">
+                    <th>Generic Cards</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                {deckPricing.generics.map(value => <CardPricingRow key={value.name} cardPricingEntry={value}/>)}
+                <tr>
+                    <th scope={"row"}>Generic Cards Total</th>
+                    <th></th>
+                    <th className={"right-align"}>{genericCardCount}</th>
+                    <th className={"right-align"}>${genericCardCosts.toFixed(2)}</th>
+                </tr>
+            </>}
             </tbody>
             <tfoot className={"tertiary-container"}>
             <tr>

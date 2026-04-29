@@ -108,7 +108,7 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & { keyCardImages?
                 <hr/>
                 <div>
                     <h6>Handy Links</h6>
-                    <a href={`https://vg-paradox.com/subpage/DeckInfo/ENG/D/${title}Tops`} className="underline">{title}on VGParadox</a>
+                    <a href={`https://vg-paradox.com/subpage/DeckInfo/ENG/D/${title}Tops`} className="underline">{`${title} on VGParadox`}</a>
                 </div>
             </article>
             <div className="grid m8 s12 l12">

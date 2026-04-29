@@ -9,7 +9,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://alan19.github.io',
-    base: "/vg-rideline-showcase",
+    base: "/vg-ridelines",
     integrations: [mdx(), sitemap(), react()],
     vite: {
         ssr: {
