@@ -12,7 +12,7 @@ import {quantile} from "simple-statistics";
  * @param name The name of the card to search for
  */
 async function getMatchingCards(name: string): Promise<CardDatabaseEntry[]> {
-    const regex = new RegExp(name + String.raw`\s?(\(.+\))?$`)
+    const regex = new RegExp(String.raw`^${name}\s?(\(.+\))?$`)
     return (await cardDB).filter(card => new RegExp(regex).exec(card.name));
 }
 
