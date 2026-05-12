@@ -35,8 +35,6 @@ const decks = defineCollection({
             advantages: z.array(z.string()),
             disadvantages: z.array(z.string()),
             ['deck-notes']: z.array(z.string()),
-            ['core-cost']: z.number().min(0).max(4),
-            ['generics-cost']: z.number().min(0).max(4),
             ['offense']: z.number().min(0).max(4),
             ['control']: z.number().min(0).max(4),
             ['value']: z.number().min(0).max(4),

@@ -13,7 +13,8 @@ import {quantile} from "simple-statistics";
  */
 async function getMatchingCards(name: string): Promise<CardDatabaseEntry[]> {
     // TODO Replace with RegExp.replace when available
-    const regex = new RegExp(String.raw`^${name.replaceAll(/[-[\]{}()*+?.,\\^$|]/g, "\\$&")}\s?(\(.+\))?$`)
+    const cleanName = name.replaceAll(/[-[\]{}()*+?.,\\^$|]/g, String.raw`\$&`);
+    const regex = new RegExp(String.raw`^${cleanName}\s?(\(.+\))?$`)
     return (await cardDB).filter(card => new RegExp(regex).exec(card.name));
 }
 
@@ -65,6 +66,9 @@ async function getPricingGuide() {
 export const pricingGuide: { [p: string]: DeckPricing } = await getPricingGuide()
 
 const deckTotals = Object.values(pricingGuide).map(value => getPricingNumbers(value).total);
+const coreTotals = Object.values(pricingGuide).map(value => getPricingNumbers(value).coreCardCosts);
+const genericTotals = Object.values(pricingGuide).map(value => getPricingNumbers(value).genericCardCosts);
+
 const rounding = 25
 export const deckTotalStats = {
     tier1: Math.round(quantile(deckTotals, 0.25) / rounding) * rounding,
@@ -73,20 +77,52 @@ export const deckTotalStats = {
     tier4: Math.round(quantile(deckTotals, 0.91) / rounding) * rounding
 }
 
-export function getPricingTier(price: number): 1 | 2 | 3 | 4 | 5 {
-    if (_.inRange(price, 0, deckTotalStats.tier1)) {
+export const deckCoreStats = {
+    tier1: Math.round(quantile(coreTotals, 0.25) / rounding) * rounding,
+    tier2: Math.round(quantile(coreTotals, 0.5) / rounding) * rounding,
+    tier3: Math.round(quantile(coreTotals, 0.75) / rounding) * rounding,
+    tier4: Math.round(quantile(coreTotals, 0.91) / rounding) * rounding
+}
+
+export const deckGenericStats = {
+    tier1: Math.round(quantile(genericTotals, 0.25) / rounding) * rounding,
+    tier2: Math.round(quantile(genericTotals, 0.5) / rounding) * rounding,
+    tier3: Math.round(quantile(genericTotals, 0.75) / rounding) * rounding,
+    tier4: Math.round(quantile(genericTotals, 0.91) / rounding) * rounding
+}
+
+export enum PricingCategory {
+    TOTAL, GENERICS, CORE
+}
+
+/**
+ * Get the pricing tier of the deck's total price
+ * @param price The price of the deck
+ * @param category
+ * Tier 1: ~25th percentile, Tier 2: ~50th percentile, Tier 3: ~75th percentile, Tier 4: ~91st percentile, Tier 5: greater than 91st percentile
+ */
+export function getPricingTier(price: number, category: PricingCategory = PricingCategory.TOTAL): 1 | 2 | 3 | 4 | 5 {
+    let stats;
+    switch (category) {
+        case PricingCategory.CORE:
+            stats = deckCoreStats;
+            break;
+        case PricingCategory.GENERICS:
+            stats = deckGenericStats
+            break;
+        case PricingCategory.TOTAL:
+            stats = deckTotalStats;
+            break;
+    }
+    if (_.inRange(price, 0, stats.tier1)) {
         return 1;
-    }
-    else if (_.inRange(price, deckTotalStats.tier1, deckTotalStats.tier2)) {
+    } else if (_.inRange(price, stats.tier1, stats.tier2)) {
         return 2;
-    }
-    else if (_.inRange(price, deckTotalStats.tier2, deckTotalStats.tier3)) {
+    } else if (_.inRange(price, stats.tier2, stats.tier3)) {
         return 3;
-    }
-    else if (_.inRange(price, deckTotalStats.tier3, deckTotalStats.tier4)) {
+    } else if (_.inRange(price, stats.tier3, stats.tier4)) {
         return 4;
-    }
-    else {
+    } else {
         return 5;
     }
 }

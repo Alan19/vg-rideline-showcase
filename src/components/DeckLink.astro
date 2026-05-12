@@ -19,9 +19,9 @@ const {art, id, title} = Astro.props
     <article class="no-padding border">
         <Image widths={[500]} src={art} alt={title} class="responsive medium" transition:name={`img_${title}`} style={{objectPosition: "top", objectFit: "cover"}} />
         <div class="absolute bottom left right padding bottom-shadow white-text" transition:animate="none">
-            <nav>
+            <div>
                 <h6 style="font-size: large">{title}</h6>
-            </nav>
+            </div>
         </div>
     </article>
 </a>

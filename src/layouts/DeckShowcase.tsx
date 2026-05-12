@@ -26,7 +26,7 @@ function getFlag(nation: Nation) {
     }
 }
 
-export function DeckShowcase(props: InferEntrySchema<"decks"> & { keyCardImages?: ReactNode, genericCardImages?: ReactNode, cardArt?: ReactNode, ridelineCardImages?: ReactNode, content?: ReactNode }) {
+export function DeckShowcase(props: InferEntrySchema<"decks"> & { keyCardImages?: ReactNode, genericCardImages?: ReactNode, cardArt?: ReactNode, ridelineCardImages?: ReactNode, content?: ReactNode, coreCostTier: number, genericsCostTier: number, totalCostTier: number }) {
     const {nation} = props
     let flag = getFlag(nation);
     const {offense, control, keyCardImages, genericCardImages, value: deckValue, cardArt, ridelineCardImages, disadvantages, title, advantages, content} = props;
@@ -70,11 +70,15 @@ export function DeckShowcase(props: InferEntrySchema<"decks"> & { keyCardImages?
                         </thead>
                         <tr>
                             <td>Core</td>
-                            <td>{props['core-cost']}</td>
+                            <td>{props.coreCostTier}</td>
                         </tr>
                         <tr>
                             <td>Generics</td>
-                            <td>{props['generics-cost']}</td>
+                            <td>{props.genericsCostTier}</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{props.totalCostTier}</td>
                         </tr>
                         <thead>
                         <tr>
