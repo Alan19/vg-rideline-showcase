@@ -21,24 +21,22 @@ generics: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt06/dzbt06_020.png"
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - 6 attacks
+  - Guard restrict
+  - Drop zone revival
+  - 3 drives
+  - Back row Persona Ride power
+  - Access to grade 4 support
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
+  - Low attack power
+  - Bad early game aggression
+  - Stopped by defensive triggers
 deck-notes: 
-  - Prefer shield front triggers (Diabolos Girls, Natalia)
-  - Prefers Radiance Caliburn as Regalis Piece
-core-cost: 3
-generics-cost: 2
+  - Prefer shield front triggers (Frienzied Heiress)
+  - Prefers Union the Sky as Regalis Piece
 offense: 3
-control: 2
-value: 2
+control: 0
+value: 1
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+Use your units' skills to fill your board with Sylvan Horned Beasts, and use Magnolia's skill to give your rear-guards the ability to attack from the back row! Persona ride and Magolia Elder can give you access to extra drive checks. Attack your opponent with rear-guards that have a variety of offensive skills while Seroll and Cathair Cheile give extra power to your back row rear-guards when you Persona Ride! If necessary, Magnolia Elder can be used to get triple drive instead if you are missing persona ride.

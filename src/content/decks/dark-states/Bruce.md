@@ -15,26 +15,23 @@ key-cards: [
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt04/dzbt04_006.png"
 ]
 generics: [
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt12/dzbt12_027.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dbt10/dbt10_006.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt06/dzbt06_020.png"
 ]
 advantages:
-  - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - 4-7 Attacks
+  - Toolbox from soul
+  - High numbers
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
-deck-notes: 
+  - Many cards require "Final Rush" or "Final Burst"
+  - Piece reliant
+deck-notes:
   - Prefer shield front triggers (Diabolos Girls, Natalia)
   - Prefers Radiance Caliburn as Regalis Piece
-core-cost: 3
-generics-cost: 2
 offense: 3
-control: 2
-value: 2
+control: 1
+value: 1
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+At the start of your battle phase, Bruce enters "Final Rush" or "Final Burst" if you only have "Diabolos" units, allowing you to use powerful skills! Bruce allows you to restand one column, and you can use other cards like Orlindo, Geno, and Julian to get extra attacks!
