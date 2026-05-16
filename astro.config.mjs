@@ -27,8 +27,8 @@ export default defineConfig({
     fonts: [
         {
             provider: fontProviders.fontsource(),
-            name: "Inter",
-            cssVariable: "--font-inter",
+            name: "Outfit",
+            cssVariable: "--font-outfit",
             styles: ["normal"],
             weights: ["100 900"]
         },

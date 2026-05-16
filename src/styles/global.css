@@ -3,7 +3,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-audiowide), system-ui;
 }
 
-span, p, li, td, q, sub {
+span, p, li, td, q, sub, button {
     /*noinspection CssUnresolvedCustomProperty*/
-    font-family: var(--font-inter), system-ui;
+    font-family: var(--font-outfit), system-ui;
+}
+
+.chip {
+    /*noinspection CssUnresolvedCustomProperty*/
+    font-family: var(--font-outfit), system-ui; !important;
 }
