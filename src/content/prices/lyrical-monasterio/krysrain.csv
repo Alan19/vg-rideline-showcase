@@ -1,7 +1,7 @@
 Name,Quantity,Type
 "Wonder Lavender, Ursule",1,Core
-"Mermaid Idol, Sedna",1,Core
-"Top Idol, Aqua",1,Core
+"Mermaid Idol, Sedna",1,Generic
+"Top Idol, Aqua",1,Generic
 "Fated One of Ever-changing, Krysrain Cadenza",4,Core
 "Emphatic Rhyme, Armelle",4,Core
 "Loving Pink, Francette",4,Core
@@ -9,7 +9,7 @@ Name,Quantity,Type
 "Morning Practice in the Calm Sea, Tolmana",2,Core
 "Dazzle Bubble Paradise, Precia",2,Generic
 "Shyness Singer, Timee",1,Generic
-"Snowflake of the Deep Sea, Ephemere",1,Generic
+"Snowflake of the Deep Sea, Ephemere",1,Core
 "Moderate Mint, Rochelle",4,Core
 "Cooling Heart, Yuika",3,Generic
 "Rainbow Jeweled Beast, Olpirais",1,Generic

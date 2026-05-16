@@ -15,30 +15,28 @@ key-cards: [
   ""
 ]
 generics: [
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_002.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_001.png",
   "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss08/dzss08_Re02.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dpr/dpr_904.png",
-  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzbt01/dzbt01_003.png"
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_015.png",
+  "https://en.cf-vanguard.com/wordpress/wp-content/images/cardlist/dzss01/dzss01_011.png"
 ]
 advantages:
   - 4 Attacks
-  - Explosive Kill Turn
-  - Bind zone toolboxing
-  - Scaling Power
-  - Rear-guards with critical
+  - Guard restrict on VG
+  - 3 Drive checks
+  - Big vanguard attack
+  - Easy board building
 disadvantages:
-  - Need Evoke Alchemist for multi-attack
-  - Lackluster early game
+  - May not find all pieces quickly enough
+  - No special offensive skills on rear-guards
 deck-notes: 
   - Prefer shield front triggers (Diabolos Girls, Natalia)
   - Prefers Radiance Caliburn as Regalis Piece
 core-cost: 3
 generics-cost: 2
 offense: 3
-control: 2
-value: 2
+control: 1
+value: 3
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tincidunt urna, vitae posuere nunc. Cras gravida arcu at dolor pharetra venenatis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a tortor cursus, ullamcorper leo vitae, pulvinar leo. Vestibulum mollis, nisl nec sagittis convallis, augue velit congue libero, vitae eleifend neque turpis non est. Fusce id dolor pretium, commodo ipsum non, pretium odio. Praesent suscipit molestie ante, nec dignissim odio mollis eu.
-Morbi commodo vitae ante ut pharetra. Quisque tincidunt et neque ut dictum. Praesent posuere ac diam vitae porta. Vestibulum ornare, libero ac sodales lobortis, sem lectus semper arcu, et ultrices felis lectus quis ipsum. Proin vel dui rutrum, volutpat ante nec, cursus odio. Duis suscipit scelerisque massa, a convallis libero porttitor non. Etiam nibh nisi, ultrices at magna eu, vulputate pharetra velit. Ut dictum, lacus placerat tristique sagittis, urna lectus mollis nisi, quis ullamcorper urna
-orci quis lorem. 
+Dhinbarada can retire up to 5 rear-guards to use his skill to gain extra power, an extra drive, and a guard restrict! Your rear-guards also have various benefits from getting retired, like performing an extra attack, giving power to other rear-guards, or drawing extra cards! Use your cards' skills to refill your board every turn to fuel your Dhinbarada's skill!
